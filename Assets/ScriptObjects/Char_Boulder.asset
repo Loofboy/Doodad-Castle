@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 883f497076a2d364cb4db15837b3d92b, type: 3}
+  m_Name: Char_Boulder
+  m_EditorClassIdentifier: 
+  charnum: 0
+  displayName: Boulder
+  HealthModifier: 0
+  SpeedBuff: 0
+  JumpBuff: 0
+  SwordBuff: 0
+  AxeBuff: 0
+  PickBuff: 0

@@ -17,3 +17,4 @@ MonoBehaviour:
   dropPrefab: {fileID: 3386409530093401348, guid: 768ef380af8053440864e699824c517c, type: 3}
   resourceHealth: 10
   dropCount: 2
+  damage: 1

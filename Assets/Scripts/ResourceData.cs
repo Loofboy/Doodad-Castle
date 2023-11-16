@@ -10,6 +10,7 @@ public class ResourceData : ScriptableObject
     public GameObject dropPrefab;
     public int resourceHealth;
     public int dropCount;
+    public float damage;
     // Start is called before the first frame update
     void Start()
     {

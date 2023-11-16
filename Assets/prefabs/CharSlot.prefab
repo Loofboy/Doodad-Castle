@@ -217,9 +217,11 @@ MonoBehaviour:
   icon: {fileID: 0}
   CharID: 0
   prefab: {fileID: 0}
+  NPCHolderprefab: {fileID: 7572283558484568183, guid: 3225eee7fd617db499f6cae18425b849, type: 3}
   iconObj: {fileID: 0}
   CharName: {fileID: 0}
   CharDesc: {fileID: 0}
+  bt: {fileID: 0}
   SUI: {fileID: 0}
 --- !u!1 &4344828684277290659
 GameObject:

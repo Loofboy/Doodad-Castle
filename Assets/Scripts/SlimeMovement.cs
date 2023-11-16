@@ -36,6 +36,14 @@ public class SlimeMovement : MonoBehaviour
         rb.velocity = vel;
         vel = -vel;
     }
+    
+    private void OnTriggerStay(Collider collision)
+    {
+        if (collision.gameObject.layer == 8)
+        {
+            collision.gameObject.GetComponent<PlayerController>().DecreaseHealth(transform.GetComponent<ResourceObject>().damage);
+        }
+    }
 
     public void SetIsJumpingTrue()
     {

@@ -6,8 +6,8 @@ using UnityEngine;
 [Serializable]
 public class BoxItem
 {
-    public InvItemData data { get; private set; }
-    public int stackSize { get; private set; }
+    public InvItemData data;
+    public int stackSize;
 
     public BoxItem(InvItemData src, int num)
     {
@@ -24,6 +24,7 @@ public class BoxItem
     }
 }
 
+[Serializable]
 public class DepositSystem : MonoBehaviour
 {
     public static DepositSystem current;

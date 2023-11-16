@@ -1,12 +1,24 @@
 using UnityEngine;
 using System.Collections;
+using TMPro;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed = 5f; // Adjust this to control the player's movement speed
-    public float jumpForce = 10f; // Adjust this to control the jump force
+    private float defmoveSpeed = 5;
+    private float defjumpForce = 10;
+    private float defmaxhealth = 10;
+    public float moveSpeed;
+    public float jumpForce;
+    public float maxhealth;
+    public float health;
+    public float invinctime = 1;
     public bool isGrounded = true;
 
+    public TextMeshProUGUI healthText;
+    public Slider HealthBar;
+
+    private float damagedTime = 0f;
     private Rigidbody rb;
     public LayerMask terrainLayer;
     public GameObject body;
@@ -15,13 +27,33 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        moveSpeed = defmoveSpeed;
+        jumpForce = defjumpForce;
+        maxhealth = defmaxhealth;
         rb = GetComponent<Rigidbody>();
         StartCoroutine(Blink());
+        health = maxhealth;
+        HealthBar.maxValue = maxhealth;
+        HealthBar.value = health;
+        healthText.text = "Health: " + health;
     }
 
     void repeatBlink()
     {
         StartCoroutine(Blink());
+    }
+
+    public void ResetStats(){
+        CharacterData dat = transform.GetChild(0).GetComponent<CharAnimEvents>().chardat;
+        moveSpeed = defmoveSpeed + dat.SpeedBuff;
+        jumpForce = defjumpForce + dat.JumpBuff;
+        maxhealth = defmaxhealth + dat.HealthModifier;
+        HealthBar.maxValue = maxhealth;
+        if(health > maxhealth){
+            health = maxhealth;
+            HealthBar.value = health;
+        }
+        healthText.text = "Health: " + health;
     }
     private void Update()
     {
@@ -78,6 +110,25 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("Collided with item " + collider.name);
             item.OnPickupItem();
+        }
+    }
+    public void DecreaseHealth(float damageDealt)
+    {
+        if(Time.time > damagedTime + invinctime){
+            damagedTime = Time.time;
+            health -= damageDealt;
+            HealthBar.value = health;
+            healthText.text = "Health: " + health;
+            if(health <= 0){
+
+                Vector3 newpos = new Vector3(0, 10, 0);
+                Debug.Log("PLAYER DIED");
+                transform.position = newpos;
+                
+                health = maxhealth;
+                HealthBar.value = health;
+                healthText.text = "Health: " + health;
+            }
         }
     }
 

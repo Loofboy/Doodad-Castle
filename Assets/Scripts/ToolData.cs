@@ -7,7 +7,7 @@ public class ToolData : ScriptableObject
 { 
     public string id;
     public string wpnType;
-    public int damage;
+    public float damage;
 
     // Start is called before the first frame update
     void Start()

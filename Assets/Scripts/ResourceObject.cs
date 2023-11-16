@@ -6,15 +6,17 @@ public class ResourceObject : MonoBehaviour
 {
     public ResourceData referenceResource;
     ToolObject tool;
-    public int HP;
+    public float HP;
+    public float damage;
     Animator resAnim;
 
     private void Start()
     {
         HP = referenceResource.resourceHealth;
+        damage = referenceResource.damage;
         resAnim = GetComponent<Animator>();
     }
-    public void decreaseHP(int toolDamage)
+    public void decreaseHP(float toolDamage)
     {
         HP -= toolDamage;
         resAnim.SetTrigger("Hit");

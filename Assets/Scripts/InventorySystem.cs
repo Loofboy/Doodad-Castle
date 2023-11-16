@@ -7,8 +7,8 @@ using UnityEngine.UIElements;
 [Serializable]
 public class InvItem
 {
-    public InvItemData data { get; private set; }
-    public int stackSize { get; private set; }
+    public InvItemData data;
+    public int stackSize;
 
     public InvItem(InvItemData src)
     {
@@ -29,12 +29,13 @@ public class InvItem
     }
 }
 
+
 [Serializable]
 public class InventorySystem : MonoBehaviour
 {
     public static InventorySystem current;
-    private Dictionary<InvItemData, InvItem> m_itemDictionary;
-    public List<InvItem> Inventory { get; private set; }
+    public Dictionary<InvItemData, InvItem> m_itemDictionary;
+    public List<InvItem> Inventory;
     // Start is called before the first frame update
     private void Awake()
     {
