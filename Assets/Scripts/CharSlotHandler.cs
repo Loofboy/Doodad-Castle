@@ -6,13 +6,13 @@ using UnityEngine.UI;
 
 public class CharSlotHandler : MonoBehaviour
 {
-    public Image icon;
+    //public Image icon;
     public int CharID;
     public GameObject prefab;
 
     public GameObject NPCHolderprefab;
 
-    public GameObject iconObj;
+    //public GameObject iconObj;
     public TextMeshProUGUI CharName;
     public TextMeshProUGUI CharDesc;
 
@@ -25,51 +25,51 @@ public class CharSlotHandler : MonoBehaviour
     {
         switch (CharID)
         {
-            case 0:
+            case 1:
                 CharName.text = "Soda";
                 CharDesc.text = "Chops rocks faster, wood slower";
                 break;
-            case 1:
+            case 2:
                 CharName.text = "Water bottle";
                 CharDesc.text = "Chops rocks faster, wood slower";
                 break;
-            case 2:
+            case 3:
                 CharName.text = "Maple leaf";
                 CharDesc.text = "Chops rocks faster, wood slower";
                 break;
-            case 3:
+            case 4:
                 CharName.text = "Torch";
                 CharDesc.text = "Chops rocks faster, wood slower";
                 break;
-            case 4:
+            case 5:
                 CharName.text = "Lemon";
                 CharDesc.text = "Chops rocks faster, wood slower";
                 break;
-            case 5:
+            case 6:
                 CharName.text = "Marker";
                 CharDesc.text = "Chops rocks faster, wood slower";
                 break;
-            case 6:
+            case 7:
                 CharName.text = "Snowflake";
                 CharDesc.text = "Chops rocks faster, wood slower";
                 break;
-            case 7:
+            case 8:
                 CharName.text = "Soccer ball";
                 CharDesc.text = "Chops rocks faster, wood slower";
                 break;
-            case 8:
+            case 9:
                 CharName.text = "Rucksack";
                 CharDesc.text = "Chops rocks faster, wood slower";
                 break;
-            case 9:
+            case 10:
                 CharName.text = "Magnifying glass";
                 CharDesc.text = "Chops rocks faster, wood slower";
                 break;
-            case 10:
+            case 11:
                 CharName.text = "Trash can";
                 CharDesc.text = "Chops rocks faster, wood slower";
                 break;
-            case 11:
+            case 12:
                 CharName.text = "Tower";
                 CharDesc.text = "Chops rocks faster, wood slower";
                 break;

@@ -1,11 +1,11 @@
 {
     "Health": 8.0,
     "PlayerPosition": {
-        "x": 14.567103385925293,
-        "y": 3.7150957584381105,
-        "z": -13.169877052307129
+        "x": 2.389026403427124,
+        "y": 1.7191243171691895,
+        "z": -2.596207618713379
     },
-    "SummonCount": 1,
+    "SummonCount": 0,
     "CurrentCharacterId": "1",
     "SummonedCharacterIds": [
         "1"
@@ -14,13 +14,13 @@
     "CurrentItemList": [
         {
             "data": {
-                "instanceID": 23732
+                "instanceID": 34610
             },
             "stackSize": 10
         },
         {
             "data": {
-                "instanceID": 23840
+                "instanceID": 34676
             },
             "stackSize": 10
         }
@@ -28,15 +28,15 @@
     "Inventory": [
         {
             "data": {
-                "instanceID": 23800
+                "instanceID": 34652
             },
-            "stackSize": 3
+            "stackSize": 5
         },
         {
             "data": {
-                "instanceID": 23840
+                "instanceID": 34676
             },
-            "stackSize": 1
+            "stackSize": 6
         }
     ]
 }

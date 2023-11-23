@@ -157,6 +157,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7727280148988289069}
+        m_TargetAssemblyTypeName: CharSlotHandler, Assembly-CSharp
+        m_MethodName: Addtolist
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2081386071490632093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,17 +223,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1096640230704331072}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22d835034fad14d4a9158d2b03bcce04, type: 3}
+  m_Script: {fileID: 11500000, guid: 77cb4b8cc525ff04d8627b64356768ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
   CharID: 0
   prefab: {fileID: 0}
   NPCHolderprefab: {fileID: 7572283558484568183, guid: 3225eee7fd617db499f6cae18425b849, type: 3}
-  iconObj: {fileID: 0}
   CharName: {fileID: 0}
   CharDesc: {fileID: 0}
-  bt: {fileID: 0}
+  bt: {fileID: 5532960372623675841}
   SUI: {fileID: 0}
 --- !u!1 &4344828684277290659
 GameObject:
