@@ -8,60 +8,67 @@ public class SceneMan : MonoBehaviour
     public GameObject SettingsMenu;
     public GameObject MainMenu;
     public GameObject LoadMenu;
+    public GameObject StoryCards;
     public Animator Fader;
     public bool pausable = false;
     // Start is called before the first frame update
-    public void EnterMenu(){
+    public void EnterMenu() {
         Time.timeScale = 1;
         SceneManager.LoadScene("MainMenuScene");
     }
 
-    public void ResumeGame(){
+    public void ResumeGame() {
         MainMenu.SetActive(false);
         SettingsMenu.SetActive(false);
         pausable = true;
         Time.timeScale = 1;
     }
 
-    public void PlayGame(){
+    public void PlayGame() {
         Fader.SetTrigger("Fade");
         StartCoroutine(SwitchScene());
     }
-    private IEnumerator SwitchScene(){
+    private IEnumerator SwitchScene() {
         yield return new WaitForSeconds(0.4f);
         SceneManager.LoadScene("GameScene");
     }
 
-    public void QuitGame(){
+    public void QuitGame() {
         Application.Quit();
     }
 
-    public void EnterSettings(){
-        if(SettingsMenu == null || MainMenu == null)
+    public void EnterSettings() {
+        if (SettingsMenu == null || MainMenu == null)
             return;
         SettingsMenu.SetActive(true);
         MainMenu.SetActive(false);
     }
 
-    public void EnterLoadMenu(){
-        if(LoadMenu == null || MainMenu == null)
+    public void EnterLoadMenu() {
+        if (LoadMenu == null || MainMenu == null)
             return;
         LoadMenu.SetActive(true);
         MainMenu.SetActive(false);
     }
 
-    public void ExitSettings(){
-        if(SettingsMenu == null || MainMenu == null)
+    public void ExitSettings() {
+        if (SettingsMenu == null || MainMenu == null)
             return;
         SettingsMenu.SetActive(false);
         MainMenu.SetActive(true);
     }
 
-    public void ExitLoadMenu(){
-        if(LoadMenu == null || MainMenu == null)
+    public void ExitLoadMenu() {
+        if (LoadMenu == null || MainMenu == null)
             return;
         LoadMenu.SetActive(false);
         MainMenu.SetActive(true);
+    }
+    public void EnterCards()
+    {
+        StoryCards.SetActive(true);
+        StoryCards.GetComponent<Dialoguer>().StartDialogue();
+        MainMenu.SetActive(false);
     }
     void Update(){
         if(Input.GetKeyDown(KeyCode.Escape) && pausable == true){
@@ -72,8 +79,5 @@ public class SceneMan : MonoBehaviour
         else if(Input.GetKeyDown(KeyCode.Escape) && pausable == false){
             ResumeGame();
         }
-
-
-
     }
 }

@@ -8,6 +8,7 @@ public class ResourceObject : MonoBehaviour
     ToolObject tool;
     public float HP;
     public float damage;
+    public bool isEnemy;
     Animator resAnim;
 
     private void Start()
@@ -32,7 +33,13 @@ public class ResourceObject : MonoBehaviour
             Vector3 pos = new Vector3(transform.position.x, transform.position.y+i*2, transform.position.z);
             Instantiate(referenceResource.dropPrefab, pos, Quaternion.identity);
         }
-        Object.Destroy(transform.parent.gameObject);
+        transform.parent.gameObject.GetComponent<ResourceRespawner>().BeginRespawn(gameObject, isEnemy);
+        if (isEnemy)
+        {
+            transform.parent.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+            transform.parent.gameObject.GetComponent<BoxCollider>().enabled = false;
+        }
+        gameObject.SetActive(false);
     }
     private void OnTriggerEnter(Collider other)
     {

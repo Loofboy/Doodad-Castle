@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8974842893510780240}
   - component: {fileID: 2338363175277501436}
   - component: {fileID: 7854104894321328617}
+  - component: {fileID: 4422485567115410334}
   m_Layer: 10
   m_Name: SlimeEnemy
   m_TagString: Untagged
@@ -82,6 +83,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1.1147137, z: 0.4459954}
   m_Center: {x: 0, y: -0.057356834, z: -0.016657077}
+--- !u!114 &4422485567115410334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 308009163822850986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 232823c4210af8f42999d1a91bc989fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RespawnTimer: 30
 --- !u!1 &2791251895830161901
 GameObject:
   m_ObjectHideFlags: 0
@@ -184,6 +198,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   referenceResource: {fileID: 11400000, guid: 2a173b5f567acc34b947f0ab053b67ab, type: 2}
   HP: 0
+  damage: 0
+  isEnemy: 1
 --- !u!65 &2259678745908199899
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -241,3 +257,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SlimeAnims: {fileID: 7251386369734874568}
   rb: {fileID: 2338363175277501436}
+  bab: {x: 0, y: 0, z: 0}

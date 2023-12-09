@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    private float defmoveSpeed = 5;
+    private float defmoveSpeed = 7;
     private float defjumpForce = 10;
     private float defmaxhealth = 10;
     public float moveSpeed;
@@ -120,21 +120,24 @@ public class PlayerController : MonoBehaviour
             HealthBar.value = health;
             healthText.text = "Health: " + health;
             if(health <= 0){
-
-                Vector3 newpos = new Vector3(0, 10, 0);
-                Debug.Log("PLAYER DIED");
-                transform.position = newpos;
-                
-                health = maxhealth;
-                HealthBar.value = health;
-                healthText.text = "Health: " + health;
+                KillPlayer();
             }
         }
+    }
+    public void KillPlayer()
+    {
+        Vector3 newpos = new Vector3(130, 105, 32);
+        Debug.Log("PLAYER DIED");
+        transform.position = newpos;
+
+        health = maxhealth;
+        HealthBar.value = health;
+        healthText.text = "Health: " + health;
     }
 
     private void OnCollisionStay(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        if (collision.gameObject.CompareTag("Ground") && rb.velocity.y <= 0.1 && rb.velocity.y >= -0.1)
         {
             isGrounded = true;
         }

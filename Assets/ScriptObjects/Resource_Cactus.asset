@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80610d78a3b5f4348a328ed25be39597, type: 3}
+  m_Name: Resource_Cactus
+  m_EditorClassIdentifier: 
+  id: res_cactus
+  allowedwpntype: axe
+  dropPrefab: {fileID: 8419324558275611973, guid: 7b311c9ff68620a4fa0f3ef930618ee9, type: 3}
+  resourceHealth: 8
+  dropCount: 1
+  damage: 0

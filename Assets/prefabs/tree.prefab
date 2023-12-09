@@ -101,6 +101,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   referenceResource: {fileID: 11400000, guid: 943a63a272bb8534bb8b6c02e116b784, type: 2}
   HP: 0
+  damage: 0
+  isEnemy: 0
 --- !u!65 &6718683016956091856
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -153,6 +155,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3496946467820068109}
+  - component: {fileID: 7274362847689447257}
   m_Layer: 0
   m_Name: tree
   m_TagString: Untagged
@@ -176,3 +179,16 @@ Transform:
   - {fileID: 8868312957983215921}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7274362847689447257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8516780403218313554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 232823c4210af8f42999d1a91bc989fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RespawnTimer: 30

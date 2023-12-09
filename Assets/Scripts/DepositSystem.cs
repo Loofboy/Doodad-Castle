@@ -31,7 +31,7 @@ public class DepositSystem : MonoBehaviour
     public int currentMissionIndex;
     public List<BoxItem> currentItemList;
     public SummonUIMan SUI;
-
+    public CastleScript castle;
 
     [Serializable]
     public class Item
@@ -83,6 +83,7 @@ public class DepositSystem : MonoBehaviour
                     if(currentItemList.Count == 0)
                     {
                         currentMissionIndex++;
+                        castle.GrowCastle(currentMissionIndex);
                         SetMission(currentMissionIndex);
                         SUI.SummonCount++;
                         SUI.Counter.text = "Summons: " + SUI.SummonCount;
