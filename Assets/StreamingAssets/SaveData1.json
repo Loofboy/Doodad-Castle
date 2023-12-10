@@ -1,42 +1,52 @@
 {
-    "Health": 5.0,
+    "Health": 9.0,
     "PlayerPosition": {
-        "x": 181.85177612304688,
-        "y": 211.71728515625,
-        "z": 213.57614135742188
+        "x": 148.6773223876953,
+        "y": 100.82185363769531,
+        "z": 24.59210777282715
     },
-    "SummonCount": 1,
-    "CurrentCharacterId": "2",
-    "SummonedCharacterIds": [
-        "2"
-    ],
-    "CurrentMissionID": 1,
+    "SummonCount": 0,
+    "CurrentCharacterId": "0",
+    "SummonedCharacterIds": [],
+    "CurrentMissionID": 0,
     "CurrentItemList": [
         {
             "data": {
-                "instanceID": 23742
+                "instanceID": 23744
             },
-            "stackSize": 10
+            "prefab": {
+                "instanceID": 25334
+            },
+            "stackSize": 3
         },
         {
             "data": {
-                "instanceID": 23882
+                "instanceID": 23892
             },
-            "stackSize": 10
+            "prefab": {
+                "instanceID": 25402
+            },
+            "stackSize": 3
         }
     ],
     "Inventory": [
         {
             "data": {
-                "instanceID": 23836
+                "instanceID": 23892
             },
-            "stackSize": 1
+            "prefab": {
+                "instanceID": 25402
+            },
+            "stackSize": 3
         },
         {
             "data": {
-                "instanceID": 23746
+                "instanceID": 23744
             },
-            "stackSize": 4
+            "prefab": {
+                "instanceID": 25334
+            },
+            "stackSize": 2
         }
     ]
 }

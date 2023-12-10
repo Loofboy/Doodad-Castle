@@ -7,11 +7,15 @@ using UnityEngine;
 public class BoxItem
 {
     public InvItemData data;
+
+    public GameObject prefab;
+
     public int stackSize;
 
     public BoxItem(InvItemData src, int num)
     {
         data = src;
+        prefab = data.prefab;
         stackSize = num;
     }
     public void AddToStack(int count)
@@ -68,6 +72,11 @@ public class DepositSystem : MonoBehaviour
                 item.AddToStack(count);
                 current.DepositChangedEvent();
             }
+    }
+
+    public void AddByPrefab(GameObject prefab, int count)
+    {
+        Add(prefab.transform.GetChild(0).gameObject.GetComponent<ItemObject>().referenceItem, count);
     }
 
     public void Remove(InvItemData referenceData, int count)

@@ -12,9 +12,10 @@ public class SaveData
     public string CurrentCharacterId;
     public List<string> SummonedCharacterIds;
     public int CurrentMissionID;
-    public List<BoxItem> CurrentItemList;
 
+    public List<BoxItem> CurrentItemList;
     public List<InvItem> Inventory;
+
     public Dictionary<InvItemData, InvItem> m_itemDictionary;
     
 }

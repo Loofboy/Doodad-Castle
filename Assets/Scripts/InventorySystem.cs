@@ -8,11 +8,15 @@ using UnityEngine.UIElements;
 public class InvItem
 {
     public InvItemData data;
+
+    public GameObject prefab;
+
     public int stackSize;
 
     public InvItem(InvItemData src)
     {
         data = src;
+        prefab = data.prefab;
         AddToStack();
     }
     public void AddToStack()
@@ -67,6 +71,10 @@ public class InventorySystem : MonoBehaviour
         }
         Debug.Log(Inventory);
         current.InventoryChangedEvent();
+    }
+    public void AddByPrefab(GameObject prefab)
+    {
+        Add(prefab.transform.GetChild(0).gameObject.GetComponent<ItemObject>().referenceItem);
     }
     public void Remove(InvItemData referenceData, int count)
     {

@@ -43,16 +43,25 @@ public class DataManager : MonoBehaviour
                 summon.Summonedcharacters = save.SummonedCharacterIds;
                 summon.Resummon(save.CurrentCharacterId);
 
-                inv.Inventory = save.Inventory;
-                foreach(InvItem i in inv.Inventory){
-                    InvItemData j = i.data;
-                    inv.m_itemDictionary.Add(j, i);
+            //inv.Inventory = save.Inventory;
+
+                foreach (InvItem i in save.Inventory)
+                {
+                    for (int k = 0; k < i.stackSize; k++)
+                    {
+                        inv.AddByPrefab(i.prefab);
+                    }
                 }
                 inv.InventoryChangedEvent();
 
                 depsys.currentMissionIndex = save.CurrentMissionID;
-                castle.GrowCastle(depsys.currentMissionIndex);
-                depsys.currentItemList = save.CurrentItemList;
+                if(depsys.currentMissionIndex != 0)
+                    castle.GrowCastle(depsys.currentMissionIndex);
+                //depsys.currentItemList = save.CurrentItemList;
+                foreach (BoxItem i in save.CurrentItemList)
+                {
+                    depsys.AddByPrefab(i.prefab, i.stackSize);
+                }
                 depsys.DepositChangedEvent();
             }
             Fade.SetTrigger("Finish");
