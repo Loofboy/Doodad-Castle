@@ -30,11 +30,11 @@ public class CharSlotHandler : MonoBehaviour
                 CharDesc.text = "Chops rocks faster, wood slower";
                 break;
             case 2:
-                CharName.text = "Water bottle";
-                CharDesc.text = "Chops rocks faster, wood slower";
+                CharName.text = "Maple Leaf";
+                CharDesc.text = "Is much weaker, but moves and jumps better";
                 break;
             case 3:
-                CharName.text = "Maple leaf";
+                CharName.text = "Water Bottle";
                 CharDesc.text = "Chops rocks faster, wood slower";
                 break;
             case 4:
@@ -85,7 +85,7 @@ public class CharSlotHandler : MonoBehaviour
     {
         if(SUI.SummonCount > 0)
         {
-            Vector3 pos = new Vector3(0, 10, 0);
+            Vector3 pos = new Vector3(20, 120, 200);
             var parent = Instantiate(NPCHolderprefab, pos, Quaternion.identity);
             var child = Instantiate(prefab, pos, Quaternion.identity);
             child.transform.SetParent(parent.transform);

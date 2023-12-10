@@ -11,6 +11,7 @@ public class PlayerToolUser : MonoBehaviour
     public GameObject toolpos;
     public GameObject currenttool;
     public PlayerController mov;
+    public ToolBarScript toolbar;
     public string currenttoolid = "none";
     public Animator playerAnim;
     // Start is called before the first frame update
@@ -47,6 +48,7 @@ public class PlayerToolUser : MonoBehaviour
             Object.Destroy(toolpos.transform.GetChild(0).gameObject);
             currenttoolid = "none";
             playerAnim.SetBool("IsHoldingTool", false);
+            toolbar.DeselectAll();
         }
         else
         {
@@ -56,6 +58,7 @@ public class PlayerToolUser : MonoBehaviour
             currenttool = Instantiate(prefab, toolpos.transform);
             currenttool.transform.SetParent(toolpos.transform);
             playerAnim.SetBool("IsHoldingTool", true);
+            toolbar.SetToolSlot(currenttoolid);
         }
     }
     public void useTool()

@@ -1,0 +1,42 @@
+{
+    "Health": 5.0,
+    "PlayerPosition": {
+        "x": 181.85177612304688,
+        "y": 211.71728515625,
+        "z": 213.57614135742188
+    },
+    "SummonCount": 1,
+    "CurrentCharacterId": "2",
+    "SummonedCharacterIds": [
+        "2"
+    ],
+    "CurrentMissionID": 1,
+    "CurrentItemList": [
+        {
+            "data": {
+                "instanceID": 23742
+            },
+            "stackSize": 10
+        },
+        {
+            "data": {
+                "instanceID": 23882
+            },
+            "stackSize": 10
+        }
+    ],
+    "Inventory": [
+        {
+            "data": {
+                "instanceID": 23836
+            },
+            "stackSize": 1
+        },
+        {
+            "data": {
+                "instanceID": 23746
+            },
+            "stackSize": 4
+        }
+    ]
+}

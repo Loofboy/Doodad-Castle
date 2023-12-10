@@ -14,6 +14,7 @@ public class DataManager : MonoBehaviour
     public TextMeshProUGUI slidertext;
     public DepositSystem depsys;
     public SummonUIMan summon;
+    public CastleScript castle;
 
     private GameObject savobj;
     public Animator Fade;
@@ -50,6 +51,7 @@ public class DataManager : MonoBehaviour
                 inv.InventoryChangedEvent();
 
                 depsys.currentMissionIndex = save.CurrentMissionID;
+                castle.GrowCastle(depsys.currentMissionIndex);
                 depsys.currentItemList = save.CurrentItemList;
                 depsys.DepositChangedEvent();
             }
