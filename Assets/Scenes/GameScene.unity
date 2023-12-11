@@ -7175,6 +7175,17 @@ MonoBehaviour:
   summon: {fileID: 440450353}
   castle: {fileID: 158267140}
   Fade: {fileID: 1478117152}
+  Itemslist:
+  - prefab: {fileID: 7097898533923879663, guid: a65cc0f17ad1e084993b63d82ca60e1e, type: 3}
+    id: inv_wood
+  - prefab: {fileID: 8419324558275611973, guid: 2c18e310f33fecd46b338fff3ba6bb0a, type: 3}
+    id: inv_stone
+  - prefab: {fileID: 3386409530093401348, guid: 768ef380af8053440864e699824c517c, type: 3}
+    id: inv_slimeball
+  - prefab: {fileID: 8419324558275611973, guid: 7b311c9ff68620a4fa0f3ef930618ee9, type: 3}
+    id: inv_cutcactus
+  - prefab: {fileID: 8419324558275611973, guid: 35e57bb2133d78d4f9e50f3591ed5df0, type: 3}
+    id: inv_ice
 --- !u!4 &1308053640
 Transform:
   m_ObjectHideFlags: 0
@@ -9496,6 +9507,13 @@ MonoBehaviour:
       itemCount: 10
     - itemPrefab: {fileID: 7097898533923879663, guid: a65cc0f17ad1e084993b63d82ca60e1e, type: 3}
       itemCount: 10
+  - items:
+    - itemPrefab: {fileID: 8419324558275611973, guid: 2c18e310f33fecd46b338fff3ba6bb0a, type: 3}
+      itemCount: 25
+    - itemPrefab: {fileID: 7097898533923879663, guid: a65cc0f17ad1e084993b63d82ca60e1e, type: 3}
+      itemCount: 25
+    - itemPrefab: {fileID: 8419324558275611973, guid: 7b311c9ff68620a4fa0f3ef930618ee9, type: 3}
+      itemCount: 30
 --- !u!1 &1555062683
 GameObject:
   m_ObjectHideFlags: 0

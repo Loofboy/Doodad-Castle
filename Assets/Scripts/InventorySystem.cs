@@ -10,6 +10,7 @@ public class InvItem
     public InvItemData data;
 
     public GameObject prefab;
+    public string id;
 
     public int stackSize;
 
@@ -17,6 +18,7 @@ public class InvItem
     {
         data = src;
         prefab = data.prefab;
+        id = data.id;
         AddToStack();
     }
     public void AddToStack()

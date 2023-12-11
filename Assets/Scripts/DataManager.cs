@@ -2,7 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 using UnityEngine.UI;
+
+[Serializable]
+public class Item
+{
+    public GameObject prefab;
+    public string id;
+}
+
 
 public class DataManager : MonoBehaviour
 {
@@ -18,6 +27,8 @@ public class DataManager : MonoBehaviour
 
     private GameObject savobj;
     public Animator Fade;
+
+    public List<Item> Itemslist;
 
     void Start(){
         StartCoroutine(RunSave());
@@ -47,9 +58,13 @@ public class DataManager : MonoBehaviour
 
                 foreach (InvItem i in save.Inventory)
                 {
-                    for (int k = 0; k < i.stackSize; k++)
+                    foreach (Item a in Itemslist)
                     {
-                        inv.AddByPrefab(i.prefab);
+                        if (a.id == i.id)
+                            for (int k = 0; k < i.stackSize; k++)
+                            {
+                                inv.AddByPrefab(a.prefab);
+                            }
                     }
                 }
                 inv.InventoryChangedEvent();
@@ -57,10 +72,19 @@ public class DataManager : MonoBehaviour
                 depsys.currentMissionIndex = save.CurrentMissionID;
                 if(depsys.currentMissionIndex != 0)
                     castle.GrowCastle(depsys.currentMissionIndex);
-                //depsys.currentItemList = save.CurrentItemList;
+            //depsys.currentItemList = save.CurrentItemList;
+                depsys.currentItemList.Clear();
                 foreach (BoxItem i in save.CurrentItemList)
                 {
-                    depsys.AddByPrefab(i.prefab, i.stackSize);
+                    foreach (Item a in Itemslist)
+                    {
+                    if (a.id == i.id)
+                        {
+                            BoxItem itemObject = new BoxItem(a.prefab.GetComponentInChildren<ItemObject>().referenceItem, i.stackSize);
+                            depsys.currentItemList.Add(itemObject);
+                            //depsys.AddByPrefab(a.prefab, i.stackSize);
+                        }
+                    }
                 }
                 depsys.DepositChangedEvent();
             }

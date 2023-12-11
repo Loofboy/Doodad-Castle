@@ -9,6 +9,7 @@ public class BoxItem
     public InvItemData data;
 
     public GameObject prefab;
+    public string id;
 
     public int stackSize;
 
@@ -16,6 +17,7 @@ public class BoxItem
     {
         data = src;
         prefab = data.prefab;
+        id = data.id;
         stackSize = num;
     }
     public void AddToStack(int count)

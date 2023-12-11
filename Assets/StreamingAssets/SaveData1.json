@@ -1,31 +1,25 @@
 {
-    "Health": 9.0,
+    "Health": 5.0,
     "PlayerPosition": {
-        "x": 148.6773223876953,
-        "y": 100.82185363769531,
-        "z": 24.59210777282715
+        "x": 22.022109985351564,
+        "y": 111.97856140136719,
+        "z": 191.33409118652345
     },
-    "SummonCount": 0,
-    "CurrentCharacterId": "0",
-    "SummonedCharacterIds": [],
-    "CurrentMissionID": 0,
+    "SummonCount": 1,
+    "CurrentCharacterId": "2",
+    "SummonedCharacterIds": [
+        "2"
+    ],
+    "CurrentMissionID": 1,
     "CurrentItemList": [
         {
             "data": {
                 "instanceID": 23744
             },
             "prefab": {
-                "instanceID": 25334
+                "instanceID": 24998
             },
-            "stackSize": 3
-        },
-        {
-            "data": {
-                "instanceID": 23892
-            },
-            "prefab": {
-                "instanceID": 25402
-            },
+            "id": "inv_stone",
             "stackSize": 3
         }
     ],
@@ -35,18 +29,10 @@
                 "instanceID": 23892
             },
             "prefab": {
-                "instanceID": 25402
+                "instanceID": 25020
             },
-            "stackSize": 3
-        },
-        {
-            "data": {
-                "instanceID": 23744
-            },
-            "prefab": {
-                "instanceID": 25334
-            },
-            "stackSize": 2
+            "id": "inv_wood",
+            "stackSize": 11
         }
     ]
 }
