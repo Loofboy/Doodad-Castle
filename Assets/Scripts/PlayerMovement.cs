@@ -5,9 +5,10 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    private float defmoveSpeed = 7;
-    private float defjumpForce = 10;
-    private float defmaxhealth = 10;
+    public float defmoveSpeed = 7;
+    public float defjumpForce = 10;
+    public float defmaxhealth = 10;
+
     public float moveSpeed;
     public float jumpForce;
     public float maxhealth;

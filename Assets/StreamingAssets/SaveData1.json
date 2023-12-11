@@ -1,11 +1,11 @@
 {
     "Health": 5.0,
     "PlayerPosition": {
-        "x": 22.022109985351564,
-        "y": 111.97856140136719,
-        "z": 191.33409118652345
+        "x": 20.630908966064454,
+        "y": 111.71729278564453,
+        "z": 145.53115844726563
     },
-    "SummonCount": 1,
+    "SummonCount": 0,
     "CurrentCharacterId": "2",
     "SummonedCharacterIds": [
         "2"
@@ -20,7 +20,17 @@
                 "instanceID": 24998
             },
             "id": "inv_stone",
-            "stackSize": 3
+            "stackSize": 10
+        },
+        {
+            "data": {
+                "instanceID": 23892
+            },
+            "prefab": {
+                "instanceID": 25020
+            },
+            "id": "inv_wood",
+            "stackSize": 10
         }
     ],
     "Inventory": [
@@ -32,7 +42,7 @@
                 "instanceID": 25020
             },
             "id": "inv_wood",
-            "stackSize": 11
+            "stackSize": 7
         }
     ]
 }
