@@ -35,43 +35,43 @@ public class CharSlotHandler : MonoBehaviour
                 break;
             case 3:
                 CharName.text = "Water Bottle";
-                CharDesc.text = "Chops rocks faster, wood slower";
+                CharDesc.text = "Cool Description";
                 break;
             case 4:
                 CharName.text = "Torch";
-                CharDesc.text = "Chops rocks faster, wood slower";
+                CharDesc.text = "Cool Description";
                 break;
             case 5:
                 CharName.text = "Lemon";
-                CharDesc.text = "Chops rocks faster, wood slower";
+                CharDesc.text = "Cool Description";
                 break;
             case 6:
                 CharName.text = "Marker";
-                CharDesc.text = "Chops rocks faster, wood slower";
+                CharDesc.text = "Cool Description";
                 break;
             case 7:
                 CharName.text = "Snowflake";
-                CharDesc.text = "Chops rocks faster, wood slower";
+                CharDesc.text = "Cool Description";
                 break;
             case 8:
                 CharName.text = "Soccer ball";
-                CharDesc.text = "Chops rocks faster, wood slower";
+                CharDesc.text = "Cool Description";
                 break;
             case 9:
                 CharName.text = "Rucksack";
-                CharDesc.text = "Chops rocks faster, wood slower";
+                CharDesc.text = "Cool Description";
                 break;
             case 10:
                 CharName.text = "Magnifying glass";
-                CharDesc.text = "Chops rocks faster, wood slower";
+                CharDesc.text = "Cool Description";
                 break;
             case 11:
                 CharName.text = "Trash can";
-                CharDesc.text = "Chops rocks faster, wood slower";
+                CharDesc.text = "Cool Description";
                 break;
             case 12:
                 CharName.text = "Tower";
-                CharDesc.text = "Chops rocks faster, wood slower";
+                CharDesc.text = "Cool Description";
                 break;
         }
     }

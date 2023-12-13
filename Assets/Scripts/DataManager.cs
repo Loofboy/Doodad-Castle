@@ -49,7 +49,7 @@ public class DataManager : MonoBehaviour
                 while(player.transform.position != save.PlayerPosition){
                     player.transform.position = save.PlayerPosition;
                 }
-                summon.SummonCount = save.SummonCount;
+                summon.SummonCount = save.CurrentMissionID - save.SummonedCharacterIds.Count;
                 summon.Counter.text = "Summons: " + summon.SummonCount;
                 summon.Summonedcharacters = save.SummonedCharacterIds;
                 summon.Resummon(save.CurrentCharacterId);

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: res_marble
   allowedwpntype: pick
-  dropPrefab: {fileID: 8419324558275611973, guid: 2c18e310f33fecd46b338fff3ba6bb0a, type: 3}
+  dropPrefab: {fileID: 8419324558275611973, guid: 636ac9b846eda134eac5e365689a1aeb, type: 3}
   resourceHealth: 35
   dropCount: 3
   damage: 0
