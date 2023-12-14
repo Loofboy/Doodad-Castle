@@ -7273,13 +7273,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.11878275, y: -0, z: -0, w: 0.9929203}
-  m_LocalPosition: {x: 48.3, y: 108.5, z: 54.1}
+  m_LocalRotation: {x: 0.13332047, y: -0, z: -0, w: 0.991073}
+  m_LocalPosition: {x: 48.6, y: 108.5, z: 52.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 13.644, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 15.323, y: 0, z: 0}
 --- !u!114 &963194229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12157,6 +12157,8 @@ MonoBehaviour:
   currentItemList: []
   SUI: {fileID: 440450353}
   castle: {fileID: 158267140}
+  AnimatedObjectPrefab: {fileID: 2313739747699017028, guid: d2be681443b87ef49b4691170882fe16, type: 3}
+  speed: 2
   depositInfoArray:
   - items:
     - itemPrefab: {fileID: 8419324558275611973, guid: 2c18e310f33fecd46b338fff3ba6bb0a, type: 3}

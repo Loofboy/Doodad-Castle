@@ -67,7 +67,7 @@ public class SceneMan : MonoBehaviour
     public void EnterCards()
     {
         StoryCards.SetActive(true);
-        StoryCards.GetComponent<Dialoguer>().StartDialogue();
+        //StoryCards.GetComponent<Dialoguer>().StartDialogue();
         MainMenu.SetActive(false);
     }
     void Update(){

@@ -88,7 +88,8 @@ public class DataManager : MonoBehaviour
                 }
                 depsys.DepositChangedEvent();
             }
-            Fade.SetTrigger("Finish");
+        Fade.SetTrigger("Finish");
+        player.GetComponent<PlayerController>().canMove = true;
         StopCoroutine(RunSave());
     }
     public void DelData(){

@@ -16,7 +16,13 @@ public class NPCController : MonoBehaviour
     private bool EnteredTrigger;
 
     public GameObject placeholderpref;
+    public ToolBarScript Toolbar;
 
+
+    private void Awake()
+    {
+        Toolbar = GameObject.Find("Tool bar").GetComponent<ToolBarScript>();
+    }
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -86,43 +92,44 @@ public class NPCController : MonoBehaviour
     public void SwitchCharacter(bool switchpos){
         playerpref = GameObject.FindGameObjectWithTag("Play");
         var Playerobj = playerpref.transform.GetChild(0);
-            var NPCObj = transform.GetChild(0);
-            playerpref.GetComponent<PlayerToolUser>().playerAnim.SetBool("IsHoldingTool", false);
-            if(playerpref.transform.GetChild(0).GetChild(1).GetChild(1).GetChild(0).GetChild(0).transform.childCount != 0){
-                Destroy(playerpref.transform.GetChild(0).GetChild(1).GetChild(1).GetChild(0).GetChild(0).GetChild(0).gameObject);
-                playerpref.GetComponent<PlayerToolUser>().currenttoolid = "none";
-            }
+        var NPCObj = transform.GetChild(0);
+        playerpref.GetComponent<PlayerToolUser>().playerAnim.SetBool("IsHoldingTool", false);
+        if(playerpref.transform.GetChild(0).GetChild(1).GetChild(1).GetChild(0).GetChild(0).transform.childCount != 0){
+            Destroy(playerpref.transform.GetChild(0).GetChild(1).GetChild(1).GetChild(0).GetChild(0).GetChild(0).gameObject);
+            playerpref.GetComponent<PlayerToolUser>().currenttoolid = "none";
+        }
+        Toolbar.DeselectAll();
+
             
-            var pl = Instantiate(placeholderpref, transform.position, Quaternion.identity);
+        var pl = Instantiate(placeholderpref, transform.position, Quaternion.identity);
             
-            Playerobj.transform.SetParent(pl.transform);
-            NPCObj.transform.SetParent(pl.transform);
+        Playerobj.transform.SetParent(pl.transform);
+        NPCObj.transform.SetParent(pl.transform);
 
-            if(switchpos == false){
-                transform.position = playerpref.transform.position;
-                playerpref.transform.position = pl.transform.position;
-            }
-            else{
-                Playerobj.transform.position = transform.position;
-                NPCObj.transform.position = playerpref.transform.position;
-            }
+        if(switchpos == false){
+            transform.position = playerpref.transform.position;
+            playerpref.transform.position = pl.transform.position;
+        }
+        else{
+            Playerobj.transform.position = transform.position;
+            NPCObj.transform.position = playerpref.transform.position;
+        }
 
-            Playerobj.transform.SetParent(transform);
-            NPCObj.transform.SetParent(playerpref.transform);
+        Playerobj.transform.SetParent(transform);
+        NPCObj.transform.SetParent(playerpref.transform);
+        Destroy(pl.gameObject);
 
-            Destroy(pl.gameObject);
-
-            body = transform.GetChild(0).gameObject;
-            Anim = body.GetComponent<Animator>();
-            transform.GetChild(0).GetComponent<CharAnimEvents>().parentChar = this.gameObject;
-            playerpref.transform.GetChild(0).GetComponent<CharAnimEvents>().parentChar = playerpref.gameObject;
-            playerpref.GetComponent<PlayerController>().body = playerpref.gameObject.transform.GetChild(0).gameObject;
-            playerpref.GetComponent<PlayerController>().Anim = playerpref.gameObject.transform.GetChild(0).GetComponent<Animator>();
-            playerpref.GetComponent<PlayerToolUser>().playerAnim = playerpref.gameObject.transform.GetChild(0).GetComponent<Animator>();
-            playerpref.GetComponent<PlayerToolUser>().toolpos = playerpref.gameObject.transform.GetChild(0).GetChild(1).GetChild(1).GetChild(0).GetChild(0).gameObject;
+        body = transform.GetChild(0).gameObject;
+        Anim = body.GetComponent<Animator>();
+        transform.GetChild(0).GetComponent<CharAnimEvents>().parentChar = this.gameObject;
+        playerpref.transform.GetChild(0).GetComponent<CharAnimEvents>().parentChar = playerpref.gameObject;
+        playerpref.GetComponent<PlayerController>().body = playerpref.gameObject.transform.GetChild(0).gameObject;
+        playerpref.GetComponent<PlayerController>().Anim = playerpref.gameObject.transform.GetChild(0).GetComponent<Animator>();
+        playerpref.GetComponent<PlayerToolUser>().playerAnim = playerpref.gameObject.transform.GetChild(0).GetComponent<Animator>();
+        playerpref.GetComponent<PlayerToolUser>().toolpos = playerpref.gameObject.transform.GetChild(0).GetChild(1).GetChild(1).GetChild(0).GetChild(0).gameObject;
             // if(this.gameObject.transform.GetChild(0).GetChild(1).GetChild(1).GetChild(0).GetChild(0).GetChild(0) != null)
             //     Destroy(this.gameObject.transform.GetChild(0).GetChild(1).GetChild(1).GetChild(0).GetChild(0).GetChild(0));
-            playerpref.GetComponent<PlayerController>().ResetStats();
+        playerpref.GetComponent<PlayerController>().ResetStats();
 
 
 

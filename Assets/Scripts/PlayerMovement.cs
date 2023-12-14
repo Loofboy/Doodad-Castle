@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     public GameObject body;
     public Animator Anim;
     public bool flipped = false;
+    public bool canMove = false;
 
     private void Start()
     {
@@ -64,9 +65,10 @@ public class PlayerController : MonoBehaviour
         float verticalInput = Input.GetAxis("Vertical");
 
         Vector3 movement = new Vector3(horizontalInput, 0f, verticalInput) * moveSpeed * Time.deltaTime;
-        transform.Translate(movement);
+        if(canMove)
+            transform.Translate(movement);
 
-        if (isGrounded && Input.GetButtonDown("Jump"))
+        if (isGrounded && Input.GetButtonDown("Jump") && canMove)
         {
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             isGrounded = false;
@@ -94,12 +96,12 @@ public class PlayerController : MonoBehaviour
         }
         //(transform.position + transform.TransformDirection(movement))
 
-        if (horizontalInput != 0 && horizontalInput < 0)
+        if (horizontalInput != 0 && horizontalInput < 0 && canMove)
         {
             body.transform.localScale = new Vector3(-1f, 1f, 1f);
             flipped = true;
         }
-        else if (horizontalInput != 0 && horizontalInput > 0)
+        else if (horizontalInput != 0 && horizontalInput > 0 && canMove)
         {
             body.transform.localScale = new Vector3(1f, 1f, 1f);
             flipped = false;

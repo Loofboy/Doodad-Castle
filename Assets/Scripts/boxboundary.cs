@@ -46,13 +46,15 @@ public class boxboundary : MonoBehaviour
                     {
                         if(reqitem.stackSize >= invitem.stackSize)
                         {
+                            DepSys.AnimateDeposit(invitem.prefab.GetComponentInChildren<SpriteRenderer>().sprite, invitem.stackSize);
                             DepSys.Remove(reqitem.data, invitem.stackSize);
                             InvSys.Remove(invitem.data, invitem.stackSize);
                         }
                         else
                         {
+                            DepSys.AnimateDeposit(invitem.prefab.GetComponentInChildren<SpriteRenderer>().sprite, reqitem.stackSize);
                             InvSys.Remove(invitem.data, reqitem.stackSize);
-                            DepSys.Remove(reqitem.data, reqitem.stackSize);
+                            DepSys.Remove(reqitem.data, reqitem.stackSize);  
                         }
                         return;
                     }

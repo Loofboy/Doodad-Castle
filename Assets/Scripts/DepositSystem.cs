@@ -39,6 +39,10 @@ public class DepositSystem : MonoBehaviour
     public SummonUIMan SUI;
     public CastleScript castle;
 
+    public GameObject AnimatedObjectPrefab;
+    public float speed = 1f;
+    private float timespentmult = 1;
+
     [Serializable]
     public class Item
     {
@@ -104,6 +108,31 @@ public class DepositSystem : MonoBehaviour
                 }
             }
     }
+    public void AnimateDeposit(Sprite icon, int count)
+    {
+        timespentmult = 1;
+        //StopAllCoroutines();
+        Debug.Log(icon + "    " + count);
+        StartCoroutine(SpawnFellas(icon, count));
+    }
+    public IEnumerator SpawnFellas(Sprite icon, int count)
+    {
+        for (int i = 0; i < count; i++)
+        {
+            yield return new WaitForSeconds(0.35f * timespentmult);
+            float rannum = UnityEngine.Random.Range(-2f, 2f);
+            Vector3 pos = new Vector3(transform.position.x + rannum, transform.position.y + 2f, transform.position.z);
+            GameObject obj = Instantiate(AnimatedObjectPrefab, pos, Quaternion.identity);
+            obj.transform.SetParent(transform);
+            obj.GetComponent<SpriteRenderer>().sprite = icon;
+            obj.GetComponent<SpriteRenderer>().size = new Vector2(1, 1);
+            obj.GetComponent<MoveItem>().speed = speed;
+            obj.GetComponent<MoveItem>().target = transform;
+            if (timespentmult != 0.1f)
+                timespentmult -= 0.1f; 
+
+        }
+    } 
 
     // Start is called before the first frame update
     void Start()
