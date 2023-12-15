@@ -8,6 +8,7 @@ public class ItemObject : MonoBehaviour
 
     public void OnPickupItem()
     {
+        JSAM.AudioManager.PlaySound(SoundLibrarySounds.pop, transform);
         InventorySystem.current.Add(referenceItem);
         Destroy(transform.parent.gameObject);
     }

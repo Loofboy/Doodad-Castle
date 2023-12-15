@@ -1,0 +1,59 @@
+{
+    "Health": 4.0,
+    "PlayerPosition": {
+        "x": 13.873233795166016,
+        "y": 111.71729278564453,
+        "z": 196.21319580078126
+    },
+    "SummonCount": 1,
+    "CurrentCharacterId": "2",
+    "SummonedCharacterIds": [
+        "2",
+        "1"
+    ],
+    "CurrentMissionID": 2,
+    "CurrentItemList": [
+        {
+            "data": {
+                "instanceID": 23750
+            },
+            "prefab": {
+                "instanceID": 25910
+            },
+            "id": "inv_stone",
+            "stackSize": 25
+        },
+        {
+            "data": {
+                "instanceID": 24036
+            },
+            "prefab": {
+                "instanceID": 25908
+            },
+            "id": "inv_wood",
+            "stackSize": 12
+        },
+        {
+            "data": {
+                "instanceID": 23982
+            },
+            "prefab": {
+                "instanceID": 25914
+            },
+            "id": "inv_cutcactus",
+            "stackSize": 30
+        }
+    ],
+    "Inventory": [
+        {
+            "data": {
+                "instanceID": 23822
+            },
+            "prefab": {
+                "instanceID": 25912
+            },
+            "id": "inv_slimeball",
+            "stackSize": 5
+        }
+    ]
+}

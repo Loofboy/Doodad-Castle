@@ -38,11 +38,13 @@ public class SummonUIMan : MonoBehaviour
         {
             if (state == false)
             {
+                JSAM.AudioManager.PlaySound(SoundLibrarySounds.click);
                 anim.SetBool("SummonOn", true);
                 state = true;
             }
             else
             {
+                JSAM.AudioManager.PlaySound(SoundLibrarySounds.click);
                 anim.SetBool("SummonOn", false);
                 state = false;
             }

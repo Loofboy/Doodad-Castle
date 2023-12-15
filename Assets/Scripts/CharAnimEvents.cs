@@ -28,4 +28,9 @@ public class CharAnimEvents : MonoBehaviour
             ptu = parentChar.GetComponent<PlayerToolUser>();
         ptu.DeleteToolCollision();
     }
+
+    public void PlayWalkSound()
+    {
+        JSAM.AudioManager.PlaySound(SoundLibrarySounds.step, transform);
+    }
 }

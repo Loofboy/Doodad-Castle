@@ -19,11 +19,13 @@ public class InvUIMan : MonoBehaviour
         {
             if(invstate == false)
             {
+                JSAM.AudioManager.PlaySound(SoundLibrarySounds.click);
                 Invanim.SetBool("InventoryOn", true);
                 invstate = true;
             }
             else
             {
+                JSAM.AudioManager.PlaySound(SoundLibrarySounds.click);
                 Invanim.SetBool("InventoryOn", false);
                 invstate = false;
             }

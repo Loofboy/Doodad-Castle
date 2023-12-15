@@ -40,8 +40,10 @@ public class DepositSystem : MonoBehaviour
     public CastleScript castle;
 
     public GameObject AnimatedObjectPrefab;
-    public float speed = 1f;
+    public float speed = 0.1f;
     private float timespentmult = 1;
+
+    public Transform targetpos;
 
     [Serializable]
     public class Item
@@ -123,22 +125,26 @@ public class DepositSystem : MonoBehaviour
             float rannum = UnityEngine.Random.Range(-2f, 2f);
             Vector3 pos = new Vector3(transform.position.x + rannum, transform.position.y + 2f, transform.position.z);
             GameObject obj = Instantiate(AnimatedObjectPrefab, pos, Quaternion.identity);
+            JSAM.AudioManager.PlaySound(SoundLibrarySounds.fwis, obj.transform);
             obj.transform.SetParent(transform);
             obj.GetComponent<SpriteRenderer>().sprite = icon;
             obj.GetComponent<SpriteRenderer>().size = new Vector2(1, 1);
             obj.GetComponent<MoveItem>().speed = speed;
-            obj.GetComponent<MoveItem>().target = transform;
+            obj.GetComponent<MoveItem>().target = targetpos;
             if (timespentmult != 0.1f)
                 timespentmult -= 0.1f; 
 
         }
-    } 
+    }
 
+    void Awake()
+    {
+        current = this;
+    }
     // Start is called before the first frame update
     void Start()
     {
         //Debug.Log(depositInfoArray[0].items.Count);
-        current = this;
         currentMissionIndex = 0;
         SetMission(currentMissionIndex);
     }

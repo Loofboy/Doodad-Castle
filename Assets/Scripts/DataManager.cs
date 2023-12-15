@@ -31,6 +31,7 @@ public class DataManager : MonoBehaviour
     public List<Item> Itemslist;
 
     void Start(){
+        JSAM.AudioManager.PlayMusic(SoundLibraryMusic.GameMusic);
         StartCoroutine(RunSave());
     }
     private IEnumerator RunSave(){
@@ -86,7 +87,7 @@ public class DataManager : MonoBehaviour
                         }
                     }
                 }
-                depsys.DepositChangedEvent();
+                //depsys.DepositChangedEvent();
             }
         Fade.SetTrigger("Finish");
         player.GetComponent<PlayerController>().canMove = true;

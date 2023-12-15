@@ -14,7 +14,8 @@ public class SceneMan : MonoBehaviour
     // Start is called before the first frame update
     public void EnterMenu() {
         Time.timeScale = 1;
-        SceneManager.LoadScene("MainMenuScene");
+        JSAM.AudioManager.PlaySound(SoundLibrarySounds.click);
+        StartCoroutine(SwitchScene("MainMenuScene"));
     }
 
     public void ResumeGame() {
@@ -22,18 +23,23 @@ public class SceneMan : MonoBehaviour
         SettingsMenu.SetActive(false);
         pausable = true;
         Time.timeScale = 1;
+        JSAM.AudioManager.PlaySound(SoundLibrarySounds.click);
     }
 
     public void PlayGame() {
-        Fader.SetTrigger("Fade");
-        StartCoroutine(SwitchScene());
+        //Fader.SetTrigger("Fade");
+        StartCoroutine(SwitchScene("GameScene"));
     }
-    private IEnumerator SwitchScene() {
+    private IEnumerator SwitchScene(string name) {
+        Fader.SetTrigger("Fade");
+        JSAM.AudioManager.StopMusicIfPlaying(SoundLibraryMusic.GameMusic);
+        JSAM.AudioManager.StopMusicIfPlaying(SoundLibraryMusic.MenuMusic);
         yield return new WaitForSeconds(0.4f);
-        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene(name);
     }
 
     public void QuitGame() {
+        JSAM.AudioManager.PlaySound(SoundLibrarySounds.click);
         Application.Quit();
     }
 
@@ -42,6 +48,7 @@ public class SceneMan : MonoBehaviour
             return;
         SettingsMenu.SetActive(true);
         MainMenu.SetActive(false);
+        JSAM.AudioManager.PlaySound(SoundLibrarySounds.click);
     }
 
     public void EnterLoadMenu() {
@@ -49,6 +56,7 @@ public class SceneMan : MonoBehaviour
             return;
         LoadMenu.SetActive(true);
         MainMenu.SetActive(false);
+        JSAM.AudioManager.PlaySound(SoundLibrarySounds.click);
     }
 
     public void ExitSettings() {
@@ -56,6 +64,7 @@ public class SceneMan : MonoBehaviour
             return;
         SettingsMenu.SetActive(false);
         MainMenu.SetActive(true);
+        JSAM.AudioManager.PlaySound(SoundLibrarySounds.click);
     }
 
     public void ExitLoadMenu() {
@@ -63,15 +72,18 @@ public class SceneMan : MonoBehaviour
             return;
         LoadMenu.SetActive(false);
         MainMenu.SetActive(true);
+        JSAM.AudioManager.PlaySound(SoundLibrarySounds.click);
     }
     public void EnterCards()
     {
         StoryCards.SetActive(true);
         //StoryCards.GetComponent<Dialoguer>().StartDialogue();
         MainMenu.SetActive(false);
+        JSAM.AudioManager.PlaySound(SoundLibrarySounds.click);
     }
     void Update(){
         if(Input.GetKeyDown(KeyCode.Escape) && pausable == true){
+            JSAM.AudioManager.PlaySound(SoundLibrarySounds.click);
             MainMenu.SetActive(true);
             pausable = false;
             Time.timeScale = 0;

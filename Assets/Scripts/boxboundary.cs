@@ -9,6 +9,7 @@ public class boxboundary : MonoBehaviour
 
     public DepositSystem DepSys;
     public InventorySystem InvSys;
+    public Animator Chestanims;
 
     // Update is called once per frame
     private void OnTriggerEnter(Collider other)
@@ -18,6 +19,7 @@ public class boxboundary : MonoBehaviour
             EnteredTrigger = true;
             Debug.Log("INBOUNDARY");
             BoxUIobj.SetActive(true);
+            Chestanims.SetBool("IsOpen", true);
             BoxUIobj.GetComponentInChildren<DepositUIMan>().DrawDeposit();
         }
     }
@@ -28,6 +30,7 @@ public class boxboundary : MonoBehaviour
             EnteredTrigger = false;
             Debug.Log("OUTBOUNDARY");
             BoxUIobj.SetActive(false);
+            Chestanims.SetBool("IsOpen", false);
             foreach (Transform child in BoxUIobj.transform.GetChild(0).transform)
             {
                 GameObject.Destroy(child.gameObject);

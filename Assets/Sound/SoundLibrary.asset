@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2204bf128383ced4f8a374a536984a4c, type: 3}
+  m_Name: SoundLibrary
+  m_EditorClassIdentifier: 
+  soundCategories:
+  - 
+  - Hit
+  - Jump
+  - Enemy Deaths
+  - Misc Sounds
+  - Steps
+  - ResourceBreaks
+  musicCategories:
+  - 
+  Sounds:
+  - {fileID: 11400000, guid: a2825a7919878b844a0f0a20e7682a2d, type: 2}
+  - {fileID: 11400000, guid: 12dca8a6347f5d14fb9dd866db2ac341, type: 2}
+  - {fileID: 11400000, guid: 45f03d06785bdad4097f9bc3b5cab3b2, type: 2}
+  - {fileID: 11400000, guid: ef9004f3670f2e641be0a100a22c4530, type: 2}
+  - {fileID: 11400000, guid: 030bcdec77216284eae1a6863c71f6ff, type: 2}
+  - {fileID: 11400000, guid: 7077e56ac38ffe34e9239f075196ae29, type: 2}
+  - {fileID: 11400000, guid: cb4f5c520c35b96499668476dd22da2e, type: 2}
+  - {fileID: 11400000, guid: ab80f9831150ccc47816fc440065e9f6, type: 2}
+  - {fileID: 11400000, guid: 22822632c4912d947a2a35ed1c2a76f2, type: 2}
+  - {fileID: 11400000, guid: d3cdaad27555d1f43a0b2f68c4173dfe, type: 2}
+  - {fileID: 11400000, guid: 9b93e03c8c2772441ad826a580716757, type: 2}
+  - {fileID: 11400000, guid: 24049082cdfa3e2479ba04aa36b7a6f8, type: 2}
+  - {fileID: 11400000, guid: 32495b66279e7d842a0f88a556bdb23d, type: 2}
+  - {fileID: 11400000, guid: 07ec8b8365a2ace4db3259a5659b1040, type: 2}
+  Music:
+  - {fileID: 11400000, guid: d1ababcfe690c4a4a8d6e373a2681bae, type: 2}
+  - {fileID: 11400000, guid: 01bec0f459cd43249b0a83ef64a980f8, type: 2}
+  useCustomNames: 0
+  generatedName: SoundLibrary
+  musicEnum: SoundLibraryMusic
+  musicEnumGenerated: SoundLibraryMusic
+  musicNamespace: 
+  musicNamespaceGenerated: 
+  soundEnum: SoundLibrarySounds
+  soundEnumGenerated: SoundLibrarySounds
+  soundNamespace: 
+  soundNamespaceGenerated: 
+  soundCategoriesToList:
+  - name: 
+    files: []
+    foldout: 0
+  - name: Hit
+    files:
+    - {fileID: 11400000, guid: a2825a7919878b844a0f0a20e7682a2d, type: 2}
+    - {fileID: 11400000, guid: 12dca8a6347f5d14fb9dd866db2ac341, type: 2}
+    - {fileID: 11400000, guid: 030bcdec77216284eae1a6863c71f6ff, type: 2}
+    - {fileID: 11400000, guid: 24049082cdfa3e2479ba04aa36b7a6f8, type: 2}
+    foldout: 1
+  - name: Jump
+    files:
+    - {fileID: 11400000, guid: 45f03d06785bdad4097f9bc3b5cab3b2, type: 2}
+    foldout: 1
+  - name: Enemy Deaths
+    files:
+    - {fileID: 11400000, guid: ef9004f3670f2e641be0a100a22c4530, type: 2}
+    foldout: 1
+  - name: Misc Sounds
+    files:
+    - {fileID: 11400000, guid: 7077e56ac38ffe34e9239f075196ae29, type: 2}
+    - {fileID: 11400000, guid: cb4f5c520c35b96499668476dd22da2e, type: 2}
+    - {fileID: 11400000, guid: ab80f9831150ccc47816fc440065e9f6, type: 2}
+    - {fileID: 11400000, guid: 22822632c4912d947a2a35ed1c2a76f2, type: 2}
+    - {fileID: 11400000, guid: 9b93e03c8c2772441ad826a580716757, type: 2}
+    - {fileID: 11400000, guid: 07ec8b8365a2ace4db3259a5659b1040, type: 2}
+    foldout: 1
+  - name: Steps
+    files:
+    - {fileID: 11400000, guid: d3cdaad27555d1f43a0b2f68c4173dfe, type: 2}
+    foldout: 1
+  - name: ResourceBreaks
+    files:
+    - {fileID: 11400000, guid: 32495b66279e7d842a0f88a556bdb23d, type: 2}
+    foldout: 1
+  musicCategoriesToList:
+  - name: 
+    files:
+    - {fileID: 11400000, guid: d1ababcfe690c4a4a8d6e373a2681bae, type: 2}
+    - {fileID: 11400000, guid: 01bec0f459cd43249b0a83ef64a980f8, type: 2}
+    foldout: 1

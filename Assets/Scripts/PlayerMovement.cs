@@ -73,6 +73,7 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             isGrounded = false;
             Anim.SetBool("IsJumping", true);
+            JSAM.AudioManager.PlaySound(SoundLibrarySounds.jump);
         }
 
         if(movement != Vector3.zero)
@@ -158,5 +159,6 @@ public class PlayerController : MonoBehaviour
         Anim.SetTrigger("Blink");
         StartCoroutine(Blink());
     }
+
 
 }

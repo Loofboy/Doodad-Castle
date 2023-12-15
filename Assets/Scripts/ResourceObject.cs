@@ -36,6 +36,7 @@ public class ResourceObject : MonoBehaviour
         transform.parent.gameObject.GetComponent<ResourceRespawner>().BeginRespawn(gameObject, isEnemy);
         if (isEnemy)
         {
+            JSAM.AudioManager.PlaySound(SoundLibrarySounds.slimesplat, transform);
             transform.parent.gameObject.GetComponent<Rigidbody>().isKinematic = true;
             transform.parent.gameObject.GetComponent<BoxCollider>().enabled = false;
         }
@@ -49,6 +50,7 @@ public class ResourceObject : MonoBehaviour
             tool = other.transform.parent.GetChild(0).GetChild(1).GetChild(1).GetChild(0).GetChild(0).GetChild(0).gameObject.GetComponent<ToolObject>();
             if(tool.wpntype == referenceResource.allowedwpntype)
             {
+                JSAM.AudioManager.PlaySound(SoundLibrarySounds.crunch, transform);
                 decreaseHP(tool.damage);
                 Object.Destroy(other.gameObject);
             }

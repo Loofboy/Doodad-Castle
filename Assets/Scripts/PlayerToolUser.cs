@@ -49,6 +49,7 @@ public class PlayerToolUser : MonoBehaviour
             currenttoolid = "none";
             playerAnim.SetBool("IsHoldingTool", false);
             toolbar.DeselectAll();
+            JSAM.AudioManager.PlaySound(SoundLibrarySounds.click);
         }
         else
         {
@@ -59,11 +60,13 @@ public class PlayerToolUser : MonoBehaviour
             currenttool.transform.SetParent(toolpos.transform);
             playerAnim.SetBool("IsHoldingTool", true);
             toolbar.SetToolSlot(currenttoolid);
+            JSAM.AudioManager.PlaySound(SoundLibrarySounds.click);
         }
     }
     public void useTool()
     {
         playerAnim.SetTrigger("UseTool");
+        JSAM.AudioManager.PlaySound(SoundLibrarySounds.woosh, transform);
     }
     public void CreateToolCollision()
     {

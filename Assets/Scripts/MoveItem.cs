@@ -20,11 +20,16 @@ public class MoveItem : MonoBehaviour
     {
         var step = speed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, target.position, step);
+        speed += 0.075f;
 
         if (Vector3.Distance(transform.position, target.position) < 0.001f)
         {
-            if(!isgone) timenow = Time.time;
-            isgone = true;
+            if (!isgone)
+            {
+                timenow = Time.time;
+                JSAM.AudioManager.PlaySound(SoundLibrarySounds.pop, transform);
+            }
+                isgone = true;
             gameObject.GetComponent<SpriteRenderer>().sprite = null;
             transform.GetChild(0).gameObject.SetActive(false);
             if (Time.time > timenow + 2f)

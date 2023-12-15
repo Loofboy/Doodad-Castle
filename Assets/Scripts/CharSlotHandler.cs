@@ -85,6 +85,7 @@ public class CharSlotHandler : MonoBehaviour
     {
         if(SUI.SummonCount > 0)
         {
+            JSAM.AudioManager.PlaySound(SoundLibrarySounds.click);
             Vector3 pos = new Vector3(20, 120, 200);
             var parent = Instantiate(NPCHolderprefab, pos, Quaternion.identity);
             var child = Instantiate(prefab, pos, Quaternion.identity);
