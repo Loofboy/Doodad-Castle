@@ -5404,7 +5404,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!108 &705507994
 Light:
@@ -11992,7 +11992,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_slotPrefab: {fileID: 707457425104813750, guid: a7855524a37fc7d4fb71b0ddc38d49d4, type: 3}
-  depsys: {fileID: 0}
 --- !u!1001 &1513622676
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -211,7 +211,7 @@ namespace JSAM
 
                     if (!helperSource.isPlaying)
                     {
-                        Helper.PlayDebug(Audio);
+                        //Helper.PlayDebug(Audio);
                     }
                 }
             }

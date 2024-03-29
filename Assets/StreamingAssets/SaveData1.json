@@ -1,9 +1,9 @@
 {
-    "Health": 5.0,
+    "Health": 4.0,
     "PlayerPosition": {
-        "x": 20.630908966064454,
-        "y": 111.71729278564453,
-        "z": 145.53115844726563
+        "x": 180.38333129882813,
+        "y": 103.71509552001953,
+        "z": -34.76029968261719
     },
     "SummonCount": 0,
     "CurrentCharacterId": "2",
@@ -14,35 +14,35 @@
     "CurrentItemList": [
         {
             "data": {
-                "instanceID": 23744
+                "instanceID": 23750
             },
             "prefab": {
-                "instanceID": 24998
+                "instanceID": 25910
             },
             "id": "inv_stone",
             "stackSize": 10
         },
         {
             "data": {
-                "instanceID": 23892
+                "instanceID": 24036
             },
             "prefab": {
-                "instanceID": 25020
+                "instanceID": 25908
             },
             "id": "inv_wood",
-            "stackSize": 10
+            "stackSize": 8
         }
     ],
     "Inventory": [
         {
             "data": {
-                "instanceID": 23892
+                "instanceID": 23822
             },
             "prefab": {
-                "instanceID": 25020
+                "instanceID": 25912
             },
-            "id": "inv_wood",
-            "stackSize": 7
+            "id": "inv_slimeball",
+            "stackSize": 2
         }
     ]
 }
