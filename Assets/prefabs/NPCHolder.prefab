@@ -14,7 +14,10 @@ GameObject:
   - component: {fileID: 5962399769362968627}
   - component: {fileID: 3467414296618934153}
   - component: {fileID: 398323140220370532}
-  m_Layer: 0
+  - component: {fileID: 3517586423586654549}
+  - component: {fileID: 2073992131051891492}
+  - component: {fileID: 2514649838108122370}
+  m_Layer: 13
   m_Name: NPCHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +96,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7572283558484568183}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1f0ebe534b3c4ea429d8efca024ebf81, type: 3}
   m_Name: 
@@ -105,8 +108,11 @@ MonoBehaviour:
   toolpos: {fileID: 0}
   currenttool: {fileID: 0}
   mov: {fileID: 0}
+  nmov: {fileID: 3467414296618934153}
+  toolbar: {fileID: 0}
   currenttoolid: none
   playerAnim: {fileID: 0}
+  isPlayer: 0
 --- !u!114 &3467414296618934153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,6 +128,16 @@ MonoBehaviour:
   moveSpeed: 8
   jumpForce: 10
   isGrounded: 1
+  assignedResource: {fileID: 0}
+  FriendList: []
+  EnemyList:
+  - Soda
+  - Boulder
+  isPicking: 0
+  invCapacity: 10
+  items: []
+  busy: 0
+  onCooldown: 0
   terrainLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -129,6 +145,9 @@ MonoBehaviour:
   Anim: {fileID: 0}
   flipped: 0
   placeholderpref: {fileID: 1930852593506720531, guid: f0f6976221608584cb4b383ebd22c20b, type: 3}
+  Toolbar: {fileID: 0}
+  navagent: {fileID: 2514649838108122370}
+  resourceMenu: {fileID: 0}
 --- !u!65 &398323140220370532
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -150,3 +169,61 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 5.587228, y: 3.4710438, z: 5.297531}
   m_Center: {x: 0.1464696, y: -0.12454021, z: -0.076476455}
+--- !u!114 &3517586423586654549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7572283558484568183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf39df45feb6d51409fd9107983a8aa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  projectile: {fileID: 0}
+  projectileSpeed: 0
+  projectileCooldown: 0
+  hasAggressionStates: 0
+  aggressive: 0
+  aggressionDuration: 10
+  health: 0
+  NPC: {fileID: 0}
+  NPCenemy: 0
+  navagent: {fileID: 0}
+--- !u!114 &2073992131051891492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7572283558484568183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1330718277862924ba514c7da54a1d38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tree: {fileID: 11400000, guid: 811f0086e0e4683499f7a3c810b9a99b, type: 2}
+--- !u!195 &2514649838108122370
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7572283558484568183}
+  m_Enabled: 0
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 8
+  m_Acceleration: 20
+  avoidancePriority: 50
+  m_AngularSpeed: 0
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 1.7
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4

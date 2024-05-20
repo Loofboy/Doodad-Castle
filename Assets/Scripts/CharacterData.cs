@@ -14,6 +14,8 @@ public class CharacterData : ScriptableObject
     public float SwordBuff;
     public float AxeBuff;
     public float PickBuff;
+    public List<string> friendlist;
+    public List<string> enemylist;
 
     // Start is called before the first frame update
     void Start()

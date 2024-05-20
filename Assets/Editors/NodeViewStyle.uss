@@ -1,0 +1,12 @@
+#node-border {
+    background-color: rgb(84, 84, 84);
+}
+
+#input {
+    align-self: center;
+}
+
+#output {
+    justify-content: flex-start;
+    align-self: center;
+}

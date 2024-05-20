@@ -1,11 +1,21 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using System;
 
 public class NPCController : MonoBehaviour
 {
     public float moveSpeed = 5f; // Adjust this to control the player's movement speed
     public float jumpForce = 10f; // Adjust this to control the jump force
     public bool isGrounded = true;
+    public GameObject assignedResource;
+    public List<string> FriendList = new List<string>();
+    public List<string> EnemyList = new List<string>();
+    public bool isPicking = false;
+    public float invCapacity;
+    public List<GameObject> items = new List<GameObject>();
+    public bool busy = false;
+    public bool onCooldown = false;
 
     private Rigidbody rb;
     public LayerMask terrainLayer;
@@ -15,8 +25,13 @@ public class NPCController : MonoBehaviour
     private GameObject playerpref;
     private bool EnteredTrigger;
 
+    public bool canMove = true;
+
     public GameObject placeholderpref;
     public ToolBarScript Toolbar;
+
+    [SerializeField] public UnityEngine.AI.NavMeshAgent navagent;
+    [SerializeField] GameObject resourceMenu;
 
 
     private void Awake()
@@ -29,6 +44,7 @@ public class NPCController : MonoBehaviour
         StartCoroutine(Blink());
         body = this.gameObject.transform.GetChild(0).gameObject;
         Anim = body.GetComponent<Animator>();
+        resourceMenu = GameObject.FindObjectOfType<ResourceMenu>(true).gameObject;
     }
 
     void repeatBlink()
@@ -52,16 +68,16 @@ public class NPCController : MonoBehaviour
         //     Anim.SetBool("IsJumping", true);
         // }
 
-        if(rb.velocity.x != 0 || rb.velocity.y != 0)
+        if(navagent.velocity.x != 0 || navagent.velocity.y != 0)
             Anim.SetBool("IsRunning", true);
         else Anim.SetBool("IsRunning", false);
 
-        if (rb.velocity.y > 0)
+        /*if (navagent.velocity.y > 0)
         {
             Anim.SetBool("IsJumping", true);
             Anim.SetBool("IsFalling", false);
         }
-        else if(rb.velocity.y < -0.2)
+        else if(navagent.velocity.y < -0.2)
         {
             Anim.SetBool("IsJumping", false);
             Anim.SetBool("IsFalling", true);
@@ -70,23 +86,31 @@ public class NPCController : MonoBehaviour
         {
             Anim.SetBool("IsFalling", false);
             Anim.SetBool("IsJumping", false);
-        }
+        }*/
         //(transform.position + transform.TransformDirection(movement))
 
-        //if (horizontalInput != 0 && horizontalInput < 0)
-        //{
-        //    body.transform.localScale = new Vector3(-1f, 1f, 1f);
-        //    flipped = true;
-        //}
-        //else if (horizontalInput != 0 && horizontalInput > 0)
-        //{
-        //    body.transform.localScale = new Vector3(1f, 1f, 1f);
-        //    flipped = false;
-        //}
+        if (navagent.velocity.x < 0 && canMove)
+        {
+            body.transform.localScale = new Vector3(-1f, 1f, 1f);
+            flipped = true;
+        }
+        else if (navagent.velocity.x != 0 && navagent.velocity.x > 0 && canMove)
+        {
+            body.transform.localScale = new Vector3(1f, 1f, 1f);
+            flipped = false;
+        }
+
         if (Input.GetKeyDown(KeyCode.R) && EnteredTrigger)
         {
             SwitchCharacter(false);
         }
+        if (Input.GetKeyDown(KeyCode.T) && EnteredTrigger && !busy)
+        {
+            OpenResourceMenu();
+        }
+
+        FriendList = body.GetComponent<CharAnimEvents>().chardat.friendlist;
+        EnemyList = body.GetComponent<CharAnimEvents>().chardat.enemylist;
 
     }
     public void SwitchCharacter(bool switchpos){
@@ -121,8 +145,13 @@ public class NPCController : MonoBehaviour
 
         body = transform.GetChild(0).gameObject;
         Anim = body.GetComponent<Animator>();
-        transform.GetChild(0).GetComponent<CharAnimEvents>().parentChar = this.gameObject;
-        playerpref.transform.GetChild(0).GetComponent<CharAnimEvents>().parentChar = playerpref.gameObject;
+        assignedResource = null;
+        if(GetComponent<PlayerToolUser>().currenttoolid != "none")
+            GetComponent<PlayerToolUser>().UnEquipTool();
+        GetComponent<BehaviourTreeRunner>().Restart();
+        busy = false;
+        transform.GetComponentInChildren<CharAnimEvents>().parentChar = this.gameObject;
+        playerpref.transform.GetComponentInChildren<CharAnimEvents>().parentChar = playerpref.gameObject;
         playerpref.GetComponent<PlayerController>().body = playerpref.gameObject.transform.GetChild(0).gameObject;
         playerpref.GetComponent<PlayerController>().Anim = playerpref.gameObject.transform.GetChild(0).GetComponent<Animator>();
         playerpref.GetComponent<PlayerToolUser>().playerAnim = playerpref.gameObject.transform.GetChild(0).GetComponent<Animator>();
@@ -130,10 +159,35 @@ public class NPCController : MonoBehaviour
             // if(this.gameObject.transform.GetChild(0).GetChild(1).GetChild(1).GetChild(0).GetChild(0).GetChild(0) != null)
             //     Destroy(this.gameObject.transform.GetChild(0).GetChild(1).GetChild(1).GetChild(0).GetChild(0).GetChild(0));
         playerpref.GetComponent<PlayerController>().ResetStats();
+    }
 
-
-
-
+    public void OpenResourceMenu()
+    {
+        if (resourceMenu == null) resourceMenu = GameObject.FindObjectOfType<ResourceMenu>(true).gameObject;
+        if (resourceMenu == null) return;
+        if (resourceMenu.active) resourceMenu.GetComponent<ResourceMenu>().CloseMenu();
+        else
+        {
+            resourceMenu.SetActive(true);
+            resourceMenu.GetComponent<ResourceMenu>().assignedNPC = this;
+        }
+    }
+    public void DumpItems(){
+        StartCoroutine(spawnitem());
+    }
+    public IEnumerator cooldownInteract()
+    {
+        yield return new WaitForSeconds(60f);
+        onCooldown = false;
+    }
+    IEnumerator spawnitem(){
+        int num1 = UnityEngine.Random.Range(1, 5);
+        float num2 = UnityEngine.Random.Range(-2, 2);
+        for(int i = 0; i < items.Count; i++){
+            Instantiate(items[i], transform.position + Vector3.up*num1 + Vector3.right*num2, Quaternion.identity);
+            yield return new WaitForSeconds(2.5f / items.Count);
+        }
+        items.Clear();
     }
     //private void OnTriggerEnter(Collider collider)
     //{
@@ -152,6 +206,12 @@ public class NPCController : MonoBehaviour
             Debug.Log("INBOUNDARYWITHNPC");
         }
     }
+    private void OnTriggerStay(Collider other) {
+        if(other.gameObject.layer == 7 && isPicking){
+            items.Add(other.gameObject.GetComponentInChildren<ItemObject>().referenceItem.prefab);
+            Destroy(other.gameObject);
+        }
+    }
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.layer == 8)
@@ -165,6 +225,8 @@ public class NPCController : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
+            if (!navagent.enabled)
+                navagent.enabled = true;
         }
     }
     private void OnCollisionExit(Collision collision)

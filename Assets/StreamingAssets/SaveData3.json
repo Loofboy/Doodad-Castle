@@ -1,59 +1,69 @@
 {
-    "Health": 4.0,
+    "Health": 5.0,
     "PlayerPosition": {
-        "x": 13.873233795166016,
+        "x": 27.56698989868164,
         "y": 111.71729278564453,
-        "z": 196.21319580078126
+        "z": 182.22515869140626
     },
-    "SummonCount": 1,
+    "SummonCount": 2,
     "CurrentCharacterId": "2",
     "SummonedCharacterIds": [
         "2",
         "1"
     ],
-    "CurrentMissionID": 2,
+    "CurrentMissionID": 3,
     "CurrentItemList": [
         {
             "data": {
-                "instanceID": 23750
+                "instanceID": 24044
             },
             "prefab": {
-                "instanceID": 25910
+                "instanceID": 26666
             },
-            "id": "inv_stone",
-            "stackSize": 25
-        },
-        {
-            "data": {
-                "instanceID": 24036
-            },
-            "prefab": {
-                "instanceID": 25908
-            },
-            "id": "inv_wood",
-            "stackSize": 12
-        },
-        {
-            "data": {
-                "instanceID": 23982
-            },
-            "prefab": {
-                "instanceID": 25914
-            },
-            "id": "inv_cutcactus",
-            "stackSize": 30
+            "id": "inv_marble",
+            "stackSize": 10
         }
     ],
     "Inventory": [
         {
             "data": {
-                "instanceID": 23822
+                "instanceID": 24062
             },
             "prefab": {
-                "instanceID": 25912
+                "instanceID": 26660
             },
             "id": "inv_slimeball",
-            "stackSize": 5
+            "stackSize": 1
+        },
+        {
+            "data": {
+                "instanceID": 23962
+            },
+            "prefab": {
+                "instanceID": 26610
+            },
+            "id": "inv_stone",
+            "stackSize": 149
+        },
+        {
+            "data": {
+                "instanceID": 24380
+            },
+            "prefab": {
+                "instanceID": 26662
+            },
+            "id": "inv_cutcactus",
+            "stackSize": 50
+        },
+        {
+            "data": {
+                "instanceID": 24476
+            },
+            "prefab": {
+                "instanceID": 26658
+            },
+            "id": "inv_wood",
+            "stackSize": 33
         }
     ]
 }

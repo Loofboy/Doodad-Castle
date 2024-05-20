@@ -9,7 +9,7 @@ public class ResolutionControl : MonoBehaviour
     public TMP_Dropdown resDropdown;
     private Resolution[] resolutions;
     private List<Resolution> filteredResolutions;
-    private float currentRefreshRate;
+    private double currentRefreshRate;
     private int currentResolutionIndex = 0;
     void Start()
     {
@@ -17,17 +17,17 @@ public class ResolutionControl : MonoBehaviour
         filteredResolutions = new List<Resolution>();
 
         resDropdown.ClearOptions();
-        currentRefreshRate = Screen.currentResolution.refreshRate;
+        currentRefreshRate = Screen.currentResolution.refreshRateRatio.value;
 
         for(int i = 0; i < resolutions.Length; i++){
-            if(resolutions[i].refreshRate == currentRefreshRate){
+            if(resolutions[i].refreshRateRatio.value == currentRefreshRate){
                 filteredResolutions.Add(resolutions[i]);
             }
         }
 
         List<string> options = new List<string>();
         for(int i = 0; i < filteredResolutions.Count; i++){
-        string resolutionOption = filteredResolutions[i].width + "x" + filteredResolutions[i].height + " " + filteredResolutions[i].refreshRate + " Hz";
+        string resolutionOption = filteredResolutions[i].width + "x" + filteredResolutions[i].height + " " + filteredResolutions[i].refreshRateRatio.value + " Hz";
         options.Add(resolutionOption);
         if(filteredResolutions[i].width == Screen.width && filteredResolutions[i].height == Screen.height){
             currentResolutionIndex = i;

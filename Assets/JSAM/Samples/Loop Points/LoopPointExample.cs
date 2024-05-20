@@ -12,7 +12,7 @@ namespace JSAM.Example.LoopPoints
 
         [SerializeField] UnityEngine.UI.Slider progressSlider = null;
 
-        [SerializeField] UnityEngine.UI.Text buttonText = null;
+        //[SerializeField] UnityEngine.UI.Text buttonText = null;
 
         AudioSource sourceToTrack;
 

@@ -1,0 +1,31 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/Editors/NodeViewStyle.uss?fileID=7433441132597879392&amp;guid=ea18549e92d9a994ead71eb2a74ae9b7&amp;type=3#NodeViewStyle" />
+    <NodeView class="graphElement node expanded">
+        <ui:VisualElement name="node-border">
+            <ui:VisualElement name="title">
+                <ui:Label name="title-label" text="RootNode" class="unity-text-element unity-label" />
+                <ui:VisualElement name="title-button-container">
+                    <ui:VisualElement name="collapse-button">
+                        <ui:VisualElement name="icon" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="contents">
+                <ui:VisualElement name="divider" class="horizontal" />
+                <ui:VisualElement name="top">
+                    <ui:VisualElement name="input" />
+                    <ui:VisualElement name="divider" class="vertical" />
+                    <ui:VisualElement name="output">
+                        <Port class="output typeBoolean port">
+                            <ui:VisualElement name="connector" class="connectorBox">
+                                <ui:VisualElement name="cap" class="connectorCap" />
+                            </ui:VisualElement>
+                            <ui:Label name="type" class="unity-text-element unity-label connectorText" />
+                        </Port>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="selection-border" />
+    </NodeView>
+</ui:UXML>

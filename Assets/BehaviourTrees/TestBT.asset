@@ -1,0 +1,166 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8360535829084253410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fe7f3e77bf31b84c88b3bb3a01f3720, type: 3}
+  m_Name: DebugLogNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: fcd631a69bd63d640a478d52b1f8d0be
+  position: {x: 437.7475, y: 177.99998}
+  agent: {fileID: 0}
+  treeData:
+    TargetLocation: {x: 0, y: 0, z: 0}
+    TargetObject: {fileID: 0}
+    moveToObject: {fileID: 0}
+    assignedResource: {fileID: 0}
+  message: 
+--- !u!114 &-3290255593744768968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de2ee89bc8b1d6a46b1ed9cb6139f03e, type: 3}
+  m_Name: WaitForSecondsNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: f3d1fc64be0ad354fade840c71a57403
+  position: {x: 417.3281, y: 59.512493}
+  agent: {fileID: 0}
+  treeData:
+    TargetLocation: {x: 0, y: 0, z: 0}
+    TargetObject: {fileID: 0}
+    moveToObject: {fileID: 0}
+    assignedResource: {fileID: 0}
+  duration: 1
+--- !u!114 &-2730936526308698787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3448f1d591c3bd74c8a570512a29d713, type: 3}
+  m_Name: SequenceNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: f3b3b9983c8946a479e7159806bf2de4
+  position: {x: 226.83517, y: 177.99998}
+  agent: {fileID: 0}
+  treeData:
+    TargetLocation: {x: 0, y: 0, z: 0}
+    TargetObject: {fileID: 0}
+    moveToObject: {fileID: 0}
+    assignedResource: {fileID: 0}
+  children:
+  - {fileID: -3290255593744768968}
+  - {fileID: -8360535829084253410}
+--- !u!114 &-2475827105123770127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b065603ad81c6fb449ce81dcb06783dc, type: 3}
+  m_Name: IsPlayerInRangeNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 5c4bb4e70fdbc1343bdb5ec1f7b06e88
+  position: {x: 620, y: 150.99995}
+  agent: {fileID: 0}
+  treeData:
+    TargetLocation: {x: 0, y: 0, z: 0}
+    TargetObject: {fileID: 0}
+    moveToObject: {fileID: 0}
+    assignedResource: {fileID: 0}
+  range: 10
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 151e8fbf0ef883b4aaa868d9da54a7a0, type: 3}
+  m_Name: TestBT
+  m_EditorClassIdentifier: 
+  rootNode: {fileID: 7116626649111127711}
+  treeState: 0
+  nodes:
+  - {fileID: 7116626649111127711}
+  - {fileID: -2730936526308698787}
+  - {fileID: -3290255593744768968}
+  - {fileID: -8360535829084253410}
+  treeData:
+    TargetLocation: {x: 0, y: 0, z: 0}
+    TargetObject: {fileID: 0}
+    moveToObject: {fileID: 0}
+    assignedResource: {fileID: 0}
+--- !u!114 &3671871236717681784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fe7f3e77bf31b84c88b3bb3a01f3720, type: 3}
+  m_Name: DebugLogNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 2a2f4c8dcd0748b41a424ba9ff3f9f82
+  position: {x: 455, y: 167}
+  agent: {fileID: 0}
+  treeData:
+    TargetLocation: {x: 0, y: 0, z: 0}
+    TargetObject: {fileID: 0}
+    moveToObject: {fileID: 0}
+    assignedResource: {fileID: 0}
+  message: WE got it
+--- !u!114 &7116626649111127711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b274a98daa8b224f9a91a516d1da624, type: 3}
+  m_Name: RootNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: f456af64088158743b4baf8a9c682213
+  position: {x: 74.09748, y: 177.51248}
+  agent: {fileID: 0}
+  treeData:
+    TargetLocation: {x: 0, y: 0, z: 0}
+    TargetObject: {fileID: 0}
+    moveToObject: {fileID: 0}
+    assignedResource: {fileID: 0}
+  child: {fileID: -2730936526308698787}

@@ -6,6 +6,7 @@ public class ToolObject : MonoBehaviour
 {
     //private defaultdamage = 3;
     public GameObject player;
+    public GameObject owner;
     public ToolData referenceTool;
     public string id;
     public string wpntype;
@@ -19,13 +20,13 @@ public class ToolObject : MonoBehaviour
         wpntype = referenceTool.wpnType;
         damage = referenceTool.damage;
         if(wpntype == "axe"){
-            damage = damage + player.transform.GetChild(0).GetComponent<CharAnimEvents>().chardat.AxeBuff;
+            damage = damage + owner.transform.GetChild(0).GetComponent<CharAnimEvents>().chardat.AxeBuff;
         }
         if(wpntype == "sword"){
-            damage = damage + player.transform.GetChild(0).GetComponent<CharAnimEvents>().chardat.SwordBuff;
+            damage = damage + owner.transform.GetChild(0).GetComponent<CharAnimEvents>().chardat.SwordBuff;
         }
         if(wpntype == "pick"){
-            damage = damage + player.transform.GetChild(0).GetComponent<CharAnimEvents>().chardat.PickBuff;
+            damage = damage + owner.transform.GetChild(0).GetComponent<CharAnimEvents>().chardat.PickBuff;
         }
     }
 }

@@ -11,9 +11,12 @@ public class PlayerToolUser : MonoBehaviour
     public GameObject toolpos;
     public GameObject currenttool;
     public PlayerController mov;
+    public NPCController nmov;
     public ToolBarScript toolbar;
     public string currenttoolid = "none";
     public Animator playerAnim;
+    public bool isPlayer = true;
+    private GameObject hb;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +27,8 @@ public class PlayerToolUser : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!isPlayer) return;
+
         if (Input.GetKeyDown("1"))
         {
             compareTool(SwordPrefab, "tool_starsword");
@@ -40,16 +45,22 @@ public class PlayerToolUser : MonoBehaviour
         {
             useTool();
         }
+        //toolpos = gameObject.transform.GetChild(0).GetChild(1).GetChild(1).GetChild(0).GetChild(0).gameObject;
+        //playerAnim = transform.GetChild(0).GetComponent<Animator>();
     }
     public void compareTool(GameObject prefab, string toolid)
     {
+        toolpos = gameObject.transform.GetChild(0).GetChild(1).GetChild(1).GetChild(0).GetChild(0).gameObject;
+        playerAnim = transform.GetChild(0).GetComponent<Animator>();
         if (currenttoolid == toolid)
         {
+            if(isPlayer){
             Object.Destroy(toolpos.transform.GetChild(0).gameObject);
             currenttoolid = "none";
             playerAnim.SetBool("IsHoldingTool", false);
             toolbar.DeselectAll();
             JSAM.AudioManager.PlaySound(SoundLibrarySounds.click);
+            }
         }
         else
         {
@@ -57,11 +68,19 @@ public class PlayerToolUser : MonoBehaviour
                 Object.Destroy(toolpos.transform.GetChild(0).gameObject);
             currenttoolid = toolid;
             currenttool = Instantiate(prefab, toolpos.transform);
+            currenttool.GetComponent<ToolObject>().owner = gameObject;
             currenttool.transform.SetParent(toolpos.transform);
             playerAnim.SetBool("IsHoldingTool", true);
+            if(isPlayer){
             toolbar.SetToolSlot(currenttoolid);
             JSAM.AudioManager.PlaySound(SoundLibrarySounds.click);
+            }
         }
+    }
+    public void UnEquipTool(){
+        Object.Destroy(toolpos.transform.GetChild(0).gameObject);
+        currenttoolid = "none";
+        playerAnim.SetBool("IsHoldingTool", false);
     }
     public void useTool()
     {
@@ -71,14 +90,15 @@ public class PlayerToolUser : MonoBehaviour
     public void CreateToolCollision()
     {
         Vector3 pos = new Vector3(transform.position.x + 1.8f, transform.position.y, transform.position.z);
-        if (mov.flipped == true) pos.x = pos.x -3.6f;
-        var hb = Instantiate(HitboxPrefab, pos, Quaternion.identity);
-        hb.transform.SetParent(GameObject.Find("Player").transform);
+        if (isPlayer && mov.flipped == true) pos.x = pos.x -3.6f;
+        else if (!isPlayer && nmov.flipped == true) pos.x = pos.x -3.6f;
+        hb = Instantiate(HitboxPrefab, pos, Quaternion.identity);
+        hb.transform.SetParent(transform);
+        if(!isPlayer) hb.transform.localScale *= 6;
     }
 
     public void DeleteToolCollision()
     {
-        var hb = GameObject.Find("toolhitbox(Clone)");
         Object.Destroy(hb);
     }
 }

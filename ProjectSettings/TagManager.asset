@@ -22,9 +22,9 @@ TagManager:
   - PlayerProjectile
   - Enemy
   - Resource
-  - 
-  - 
-  - 
+  - Obstacles
+  - NPC
+  - EnemyProj
   - 
   - 
   - 

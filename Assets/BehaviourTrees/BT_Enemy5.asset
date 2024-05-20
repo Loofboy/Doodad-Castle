@@ -1,0 +1,340 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-5883640537928658975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2489446f93f290346af5b17aa32a36a6, type: 3}
+  m_Name: SwitchNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 05aa5e5c4f7c8bc4b985a310c27cbec7
+  position: {x: 145.32254, y: 209.00002}
+  agent: {fileID: 0}
+  treeData:
+    TargetLocation: {x: 0, y: 0, z: 0}
+    TargetObject: {fileID: 0}
+    moveToObject: {fileID: 0}
+    assignedResource: {fileID: 0}
+  children:
+  - {fileID: -2171785064593869672}
+  - {fileID: -5354631353606105581}
+--- !u!114 &-5354631353606105581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3448f1d591c3bd74c8a570512a29d713, type: 3}
+  m_Name: SequenceNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 5826d26c275dab94b80cc28537c8167c
+  position: {x: 330, y: 449.69275}
+  agent: {fileID: 0}
+  treeData:
+    TargetLocation: {x: 0, y: 0, z: 0}
+    TargetObject: {fileID: 0}
+    moveToObject: {fileID: 0}
+    assignedResource: {fileID: 0}
+  children:
+  - {fileID: -2929588768693112158}
+  - {fileID: 5698712462563059260}
+  - {fileID: 1702844566447176076}
+--- !u!114 &-2929588768693112158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40ade10db74ba32458788ecb30d2432e, type: 3}
+  m_Name: GetRoamTargetLocationNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: b5f08aaee8e691d4a890973b407bdd28
+  position: {x: 538, y: 554.6928}
+  agent: {fileID: 0}
+  treeData:
+    TargetLocation: {x: 0, y: 0, z: 0}
+    TargetObject: {fileID: 0}
+    moveToObject: {fileID: 0}
+    assignedResource: {fileID: 0}
+  walkRadius: 10
+--- !u!114 &-2171785064593869672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3448f1d591c3bd74c8a570512a29d713, type: 3}
+  m_Name: SequenceNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: e27e766327b9590408f71be1c232ddcf
+  position: {x: 329.99997, y: 208.99997}
+  agent: {fileID: 0}
+  treeData:
+    TargetLocation: {x: 0, y: 0, z: 0}
+    TargetObject: {fileID: 0}
+    moveToObject: {fileID: 0}
+    assignedResource: {fileID: 0}
+  children:
+  - {fileID: 5857910834804874037}
+  - {fileID: 6429969775150866939}
+  - {fileID: -2011634556271459562}
+  - {fileID: 6607229898320943229}
+  - {fileID: 8001837256049903065}
+--- !u!114 &-2011634556271459562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9503fe89ae78dd540acd6268a6fa2d33, type: 3}
+  m_Name: IsPlayerVisibleNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 59fec9302d0635b42b6693999ba925ff
+  position: {x: 535, y: 80}
+  agent: {fileID: 0}
+  treeData:
+    TargetLocation: {x: 0, y: 0, z: 0}
+    TargetObject: {fileID: 0}
+    moveToObject: {fileID: 0}
+    assignedResource: {fileID: 0}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 151e8fbf0ef883b4aaa868d9da54a7a0, type: 3}
+  m_Name: BT_Enemy5
+  m_EditorClassIdentifier: 
+  rootNode: {fileID: 1656707029553653588}
+  treeState: 0
+  nodes:
+  - {fileID: 1656707029553653588}
+  - {fileID: 2670963137225643820}
+  - {fileID: -2171785064593869672}
+  - {fileID: 6429969775150866939}
+  - {fileID: 8001837256049903065}
+  - {fileID: -5883640537928658975}
+  - {fileID: -5354631353606105581}
+  - {fileID: -2929588768693112158}
+  - {fileID: 5698712462563059260}
+  - {fileID: 1702844566447176076}
+  - {fileID: 6607229898320943229}
+  - {fileID: -2011634556271459562}
+  - {fileID: 5857910834804874037}
+  treeData:
+    TargetLocation: {x: 0, y: 0, z: 0}
+    TargetObject: {fileID: 0}
+    moveToObject: {fileID: 0}
+    assignedResource: {fileID: 0}
+--- !u!114 &1656707029553653588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b274a98daa8b224f9a91a516d1da624, type: 3}
+  m_Name: RootNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 7506b3853c14f1046a33f1ad7b4ff65b
+  position: {x: -217.85237, y: 209}
+  agent: {fileID: 0}
+  treeData:
+    TargetLocation: {x: 0, y: 0, z: 0}
+    TargetObject: {fileID: 0}
+    moveToObject: {fileID: 0}
+    assignedResource: {fileID: 0}
+  child: {fileID: 2670963137225643820}
+--- !u!114 &1702844566447176076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de2ee89bc8b1d6a46b1ed9cb6139f03e, type: 3}
+  m_Name: WaitForSecondsNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 6a225321a2c9184498fc26439ebeb8e7
+  position: {x: 538, y: 799.6928}
+  agent: {fileID: 0}
+  treeData:
+    TargetLocation: {x: 0, y: 0, z: 0}
+    TargetObject: {fileID: 0}
+    moveToObject: {fileID: 0}
+    assignedResource: {fileID: 0}
+  duration: 2
+--- !u!114 &2670963137225643820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5459aca87a498754aa86c3339f08bc68, type: 3}
+  m_Name: RepeatNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 72a6d36b8bfe5ee4eb826c48df97cd98
+  position: {x: -51, y: 209}
+  agent: {fileID: 0}
+  treeData:
+    TargetLocation: {x: 0, y: 0, z: 0}
+    TargetObject: {fileID: 0}
+    moveToObject: {fileID: 0}
+    assignedResource: {fileID: 0}
+  child: {fileID: -5883640537928658975}
+--- !u!114 &5698712462563059260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7024bd4f89d4f84f9249c90ddb17aa1, type: 3}
+  m_Name: GoToTargetLocationNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: ca7c71d1028b1df43ae61e4e900f6a0c
+  position: {x: 538, y: 684.6928}
+  agent: {fileID: 0}
+  treeData:
+    TargetLocation: {x: 0, y: 0, z: 0}
+    TargetObject: {fileID: 0}
+    moveToObject: {fileID: 0}
+    assignedResource: {fileID: 0}
+--- !u!114 &5857910834804874037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a22b69e3befdce04b9a44df646e5e890, type: 3}
+  m_Name: isAggressiveNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: b1e22b178bb4822429167c01c169988c
+  position: {x: 535, y: -142.03255}
+  agent: {fileID: 0}
+  treeData:
+    TargetLocation: {x: 0, y: 0, z: 0}
+    TargetObject: {fileID: 0}
+    moveToObject: {fileID: 0}
+    assignedResource: {fileID: 0}
+--- !u!114 &6429969775150866939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b065603ad81c6fb449ce81dcb06783dc, type: 3}
+  m_Name: IsPlayerInRangeNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 9d712dd63eead0e4c8417204ae5ecb98
+  position: {x: 535, y: -34}
+  agent: {fileID: 0}
+  treeData:
+    TargetLocation: {x: 0, y: 0, z: 0}
+    TargetObject: {fileID: 0}
+    moveToObject: {fileID: 0}
+    assignedResource: {fileID: 0}
+  range: 20
+--- !u!114 &6607229898320943229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6081e312ec46c3d4ba3fe826d1484491, type: 3}
+  m_Name: GetPlayerTargetLocationNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: c46d5bb6ce70a714ab5597e2278fd519
+  position: {x: 535, y: 209.00002}
+  agent: {fileID: 0}
+  treeData:
+    TargetLocation: {x: 0, y: 0, z: 0}
+    TargetObject: {fileID: 0}
+    moveToObject: {fileID: 0}
+    assignedResource: {fileID: 0}
+  walkRadius: 20
+--- !u!114 &8001837256049903065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7024bd4f89d4f84f9249c90ddb17aa1, type: 3}
+  m_Name: GoToTargetLocationNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 6793636b1db7a0b4e954e7b959ffbd17
+  position: {x: 535, y: 346.159}
+  agent: {fileID: 0}
+  treeData:
+    TargetLocation: {x: 0, y: 0, z: 0}
+    TargetObject: {fileID: 0}
+    moveToObject: {fileID: 0}
+    assignedResource: {fileID: 0}

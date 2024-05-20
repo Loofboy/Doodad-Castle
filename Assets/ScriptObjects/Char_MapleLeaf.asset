@@ -20,3 +20,6 @@ MonoBehaviour:
   SwordBuff: -2
   AxeBuff: -2
   PickBuff: -2
+  friendlist: []
+  enemylist:
+  - Soda

@@ -2,17 +2,40 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Node : MonoBehaviour
+public abstract class Node : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+	public enum State{
+		Running,
+		Failure,
+		Success
+	}
+	public State state = State.Running;
+	public bool started = false;
+	public string guid;
+	public Vector2 position;
+	public AiAgent agent;
+	public TreeData treeData;
+	
+	public State Update(){
+		if(!started) {
+		OnStart();
+		started = true;
+		}
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+		state = OnUpdate();
+
+		if(state == State.Failure || state == State.Success){
+		OnStop();
+		started = false;
+		}
+		return state;
+	}
+
+	public virtual Node Clone(){
+	    return Instantiate(this);
     }
+	protected abstract void OnStart();
+	protected abstract void OnStop();
+    protected abstract State OnUpdate();
 }
+
