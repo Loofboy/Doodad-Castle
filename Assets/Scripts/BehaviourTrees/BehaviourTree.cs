@@ -22,11 +22,15 @@ public class BehaviourTree : ScriptableObject
 	public Node CreateNode(System.Type type){
 		Node node = ScriptableObject.CreateInstance(type) as Node;
 		node.name = type.Name;
+#if UNITY_EDITOR
 		node.guid = GUID.Generate().ToString();
+#endif
 		nodes.Add(node);
 
+#if UNITY_EDITOR
 		AssetDatabase.AddObjectToAsset(node, this);
 		AssetDatabase.SaveAssets();
+#endif
 		return node;
 	}
 
@@ -43,8 +47,10 @@ public class BehaviourTree : ScriptableObject
             }
         }
         nodes.Remove(node);
+#if UNITY_EDITOR
 		AssetDatabase.RemoveObjectFromAsset(node);
 		AssetDatabase.SaveAssets();
+#endif
 	}
 
 	public void AddChild(Node parent, Node child){

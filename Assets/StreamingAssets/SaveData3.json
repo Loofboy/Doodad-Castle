@@ -1,69 +1,35 @@
 {
-    "Health": 5.0,
+    "Health": 10.0,
     "PlayerPosition": {
-        "x": 27.56698989868164,
-        "y": 111.71729278564453,
-        "z": 182.22515869140626
+        "x": -23.219676971435548,
+        "y": 99.72315216064453,
+        "z": -24.53468132019043
     },
-    "SummonCount": 2,
-    "CurrentCharacterId": "2",
-    "SummonedCharacterIds": [
-        "2",
-        "1"
-    ],
-    "CurrentMissionID": 3,
+    "SummonCount": 0,
+    "CurrentCharacterId": "0",
+    "SummonedCharacterIds": [],
+    "CurrentMissionID": 0,
     "CurrentItemList": [
-        {
-            "data": {
-                "instanceID": 24044
-            },
-            "prefab": {
-                "instanceID": 26666
-            },
-            "id": "inv_marble",
-            "stackSize": 10
-        }
-    ],
-    "Inventory": [
-        {
-            "data": {
-                "instanceID": 24062
-            },
-            "prefab": {
-                "instanceID": 26660
-            },
-            "id": "inv_slimeball",
-            "stackSize": 1
-        },
         {
             "data": {
                 "instanceID": 23962
             },
             "prefab": {
-                "instanceID": 26610
+                "instanceID": 26626
             },
             "id": "inv_stone",
-            "stackSize": 149
-        },
-        {
-            "data": {
-                "instanceID": 24380
-            },
-            "prefab": {
-                "instanceID": 26662
-            },
-            "id": "inv_cutcactus",
-            "stackSize": 50
+            "stackSize": 3
         },
         {
             "data": {
                 "instanceID": 24476
             },
             "prefab": {
-                "instanceID": 26658
+                "instanceID": 26674
             },
             "id": "inv_wood",
-            "stackSize": 33
+            "stackSize": 3
         }
-    ]
+    ],
+    "Inventory": []
 }
